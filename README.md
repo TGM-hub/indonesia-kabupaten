@@ -14,6 +14,8 @@ Live: https://tgm-hub.github.io/indonesia-kabupaten/ (UI in French)
 | Indicatif → zone | `0274` | click any unit using that area code |
 | Explorer | – | hover for names, click for the card |
 
+Search bar (`/`): finds a unit by name (accent-insensitive, typo-tolerant), capital, Kemendagri code (`34.04`), common nickname (`tangsel`, `jogja`, `solo`), plate prefix (`AB`) or area code (`0274`, `274`) and highlights it on the map; hidden while a question is open.
+
 After each answer a card shows province, capital (*ibu kota*), plate prefix and area code.
 Filter by island or province, include/exclude *kota*, series of 10/20/all.
 Answers are stored in the browser (`localStorage`): stats per island, most missed items, "Revoir mes erreurs" replays every item whose last answer was wrong.
