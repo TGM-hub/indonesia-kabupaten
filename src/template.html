@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kabupaten d'Indonésie</title>
+<style>
+:root{
+  --bg:#f4f1ea; --panel:#fffdf8; --ink:#1f2a2e; --muted:#5f6b70; --line:#d9d3c7;
+  --sea:#dfe9ee; --land:#e8e2d4; --land-act:#f7f3ea; --stroke:#a79f8f; --prov:#5e5648;
+  --hover:#f1d9a6; --ok:#2f8f5b; --ok-soft:#bfe3cd; --ko:#c2412f; --ko-soft:#f2c6bd;
+  --zone:#e3a42b; --zone-soft:#f6deaa; --accent:#1f6f8b; --accent-ink:#fff;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#14191b; --panel:#1c2326; --ink:#e7ecec; --muted:#9aa7aa; --line:#2f3a3e;
+  --sea:#0f2530; --land:#2a3134; --land-act:#3a4448; --stroke:#56636a; --prov:#c9c2b2;
+  --hover:#6b5a2e; --ok:#4cc184; --ok-soft:#245c3e; --ko:#ef7462; --ko-soft:#6b2c24;
+  --zone:#f0b748; --zone-soft:#6a5321; --accent:#58b4d1; --accent-ink:#0b1a20;
+}}
+:root[data-theme="dark"]{
+  --bg:#14191b; --panel:#1c2326; --ink:#e7ecec; --muted:#9aa7aa; --line:#2f3a3e;
+  --sea:#0f2530; --land:#2a3134; --land-act:#3a4448; --stroke:#56636a; --prov:#c9c2b2;
+  --hover:#6b5a2e; --ok:#4cc184; --ok-soft:#245c3e; --ko:#ef7462; --ko-soft:#6b2c24;
+  --zone:#f0b748; --zone-soft:#6a5321; --accent:#58b4d1; --accent-ink:#0b1a20;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--bg);color:var(--ink);font:15px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);background:var(--panel)}
+header h1{font-size:17px;margin:0;font-weight:650;letter-spacing:.2px}
+header .sp{flex:1}
+button,select{font:inherit;color:inherit}
+.btn{border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:6px 11px;cursor:pointer}
+.btn:hover{border-color:var(--muted)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);font-weight:600}
+.btn:disabled{opacity:.45;cursor:default}
+main{flex:1;display:flex;min-height:0}
+#mapwrap{flex:1;position:relative;min-width:0;background:var(--sea);overflow:hidden;touch-action:none}
+svg#map{width:100%;height:100%;display:block;cursor:crosshair;user-select:none}
+svg#map.dragging{cursor:grabbing}
+#units path{fill:var(--land);fill-rule:evenodd;stroke:var(--stroke);stroke-width:.6;vector-effect:non-scaling-stroke}
+#units path.act{fill:var(--land-act)}
+#units path.act:hover{fill:var(--hover)}
+#units path.off{pointer-events:none}
+#units path.zone{fill:var(--zone-soft)}
+#units path.ok{fill:var(--ok-soft);stroke:var(--ok);stroke-width:2}
+#units path.ko{fill:var(--ko-soft);stroke:var(--ko);stroke-width:2}
+#units path.sel{fill:var(--hover)}
+#provs path{fill:none;stroke:var(--prov);stroke-width:1.3;vector-effect:non-scaling-stroke;pointer-events:none;opacity:.75}
+#provs path.hl{stroke:var(--zone);stroke-width:3;opacity:1}
+#marks circle{vector-effect:non-scaling-stroke;pointer-events:none}
+#banner{position:absolute;left:50%;top:12px;transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:8px 16px;box-shadow:0 4px 18px rgba(0,0,0,.12);text-align:center;max-width:calc(100% - 24px);pointer-events:none}
+#banner .q{font-size:20px;font-weight:650}
+#banner .sub{font-size:13px;color:var(--muted)}
+#zoomctl{position:absolute;right:12px;bottom:12px;display:flex;flex-direction:column;gap:6px}
+#zoomctl .btn{width:36px;height:36px;padding:0;font-size:18px;line-height:1}
+#tip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:3px 8px;font-size:13px;display:none;white-space:nowrap}
+aside{width:340px;flex:none;border-left:1px solid var(--line);background:var(--panel);overflow:auto;padding:14px 16px;display:flex;flex-direction:column;gap:14px}
+.lbl{font-size:12px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);margin-bottom:6px}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.modes button{border:1px solid var(--line);background:transparent;border-radius:8px;padding:7px 8px;cursor:pointer;text-align:left;font-size:14px}
+.modes button.on{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 14%,transparent);font-weight:600}
+select{width:100%;padding:7px 8px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.row label{display:flex;gap:6px;align-items:center;cursor:pointer}
+.score{display:flex;gap:10px}
+.score div{flex:1;border:1px solid var(--line);border-radius:10px;padding:6px 8px;text-align:center}
+.score b{display:block;font-size:20px}
+.score span{font-size:12px;color:var(--muted)}
+.card{border:1px solid var(--line);border-radius:12px;padding:12px}
+.card h2{margin:0 0 2px;font-size:18px}
+.card .kind{color:var(--muted);font-size:13px;margin-bottom:8px}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0}
+.card dt{color:var(--muted);font-size:13px}
+.card dd{margin:0;font-weight:500}
+.plate{display:inline-block;background:#111;color:#f5f5f5;border:2px solid #f5f5f5;outline:1px solid #111;border-radius:4px;padding:0 6px;font-family:ui-monospace,Consolas,monospace;font-weight:700;letter-spacing:1px}
+.res{font-weight:650;margin-bottom:6px}
+.res.ok{color:var(--ok)} .res.ko{color:var(--ko)}
+.muted{color:var(--muted);font-size:13px}
+.members{max-height:150px;overflow:auto;font-size:13px;margin-top:6px;columns:2;column-gap:12px}
+#statsdlg{border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--ink);max-width:560px;width:calc(100% - 32px);padding:18px}
+#statsdlg::backdrop{background:rgba(0,0,0,.35)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+td,th{padding:4px 6px;border-bottom:1px solid var(--line);text-align:left}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok)}
+footer{font-size:12px;color:var(--muted);padding:6px 16px;border-top:1px solid var(--line);background:var(--panel)}
+footer a{color:inherit}
+@media (max-width:820px){
+  html,body{height:auto}
+  main{flex-direction:column;flex:none}
+  #mapwrap{flex:none;height:58vh}
+  aside{width:auto;border-left:0;border-top:1px solid var(--line)}
+  #banner .q{font-size:17px}
+  header h1{font-size:15px}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Kabupaten d'Indonésie</h1>
+  <span class="sp"></span>
+  <button class="btn" id="statsBtn" title="Statistiques">Stats</button>
+  <button class="btn" id="themeBtn" title="Thème clair / sombre">Thème</button>
+</header>
+<main>
+  <div id="mapwrap">
+    <svg id="map" xmlns="http://www.w3.org/2000/svg">
+      <g id="units"></g><g id="provs"></g><g id="marks"></g>
+    </svg>
+    <div id="banner"><div class="q" id="bq"></div><div class="sub" id="bsub"></div></div>
+    <div id="zoomctl">
+      <button class="btn" id="zin" title="Zoom +">+</button>
+      <button class="btn" id="zout" title="Zoom −">−</button>
+      <button class="btn" id="zfit" title="Recentrer">⟲</button>
+    </div>
+    <div id="tip"></div>
+  </div>
+  <aside>
+    <div>
+      <div class="lbl">Mode</div>
+      <div class="modes" id="modes">
+        <button data-m="name">Nom → carte</button>
+        <button data-m="prov">Province d'abord</button>
+        <button data-m="plate">Plaque → zone</button>
+        <button data-m="phone">Indicatif → zone</button>
+        <button data-m="explore" style="grid-column:span 2">Explorer (révision libre)</button>
+      </div>
+    </div>
+    <div>
+      <div class="lbl">Zone</div>
+      <select id="zone"></select>
+      <div class="row" style="margin-top:8px">
+        <label><input type="checkbox" id="kota" checked> Inclure les kota</label>
+        <label>Série <select id="len" style="width:auto"><option value="10">10</option><option value="20" selected>20</option><option value="0">Tout</option></select></label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn primary" id="startBtn">Nouvelle série</button>
+      <button class="btn" id="errBtn">Revoir mes erreurs</button>
+    </div>
+    <div class="score">
+      <div><b id="sOk">0</b><span>justes</span></div>
+      <div><b id="sDone">0/0</b><span>progression</span></div>
+      <div><b id="sStreak">0</b><span>série</span></div>
+    </div>
+    <div class="card" id="card"><div class="muted">Clique sur la carte pour répondre. Molette ou pincement pour zoomer, glisser pour déplacer. Entrée ou espace : question suivante.</div></div>
+    <button class="btn" id="nextBtn" disabled>Suivant ↵</button>
+  </aside>
+</main>
+<footer>Contours : <a href="https://www.geoboundaries.org" target="_blank" rel="noopener">geoBoundaries</a> (BPS / OCHA, CC BY 3.0 IGO). Codes et chefs-lieux : <a href="https://github.com/cahyadsn/wilayah" target="_blank" rel="noopener">cahyadsn/wilayah</a> (MIT, Kepmendagri 2025). Plaques et indicatifs : Wikipédia (CC BY-SA). 514 kabupaten/kota, 38 provinces.</footer>
+
+<dialog id="statsdlg">
+  <div class="row" style="justify-content:space-between"><h2 style="margin:0;font-size:18px">Statistiques</h2><button class="btn" id="closeStats">Fermer</button></div>
+  <div id="statsBody"></div>
+  <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="btn" id="resetStats">Effacer les stats</button></div>
+</dialog>
+
+<script>
+const DATA=/*__DATA__*/null;
+(()=>{
+"use strict";
+const $=s=>document.querySelector(s);
+const NS="http://www.w3.org/2000/svg";
+const U=DATA.units, P=DATA.provs;
+const byCode={}; U.forEach((u,i)=>{u.i=i;byCode[u.c]=u;});
+const ISL=Object.fromEntries(DATA.islands);
+const fullName=u=>(u.t==="kota"?"Kota ":"Kabupaten ")+u.n;
+const shortName=u=>(u.t==="kota"?"Kota ":"Kab. ")+u.n;
+const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]];}return a;};
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+/* ---------- storage (per viewer, best effort) ---------- */
+const KEY="idkab.v1";
+function load(k,d){try{const v=localStorage.getItem(KEY+"."+k);return v?JSON.parse(v):d;}catch(e){return d;}}
+function save(k,v){try{localStorage.setItem(KEY+"."+k,JSON.stringify(v));}catch(e){}}
+let stats=load("stats",{});   // key -> {n:asked, ok:correct, last:0|1}
+const prefs=load("prefs",{});
+
+/* ---------- groups for plate / phone ---------- */
+function groupsBy(f){const g={};U.forEach(u=>f(u).forEach(k=>{(g[k]=g[k]||[]).push(u);}));return g;}
+const PLATES=groupsBy(u=>u.pl?[u.pl]:[]);
+const PHONES=groupsBy(u=>u.ph);
+
+/* ---------- map ---------- */
+const svg=$("#map"), gU=$("#units"), gP=$("#provs"), gM=$("#marks");
+const els=U.map(u=>{const p=document.createElementNS(NS,"path");p.setAttribute("d",u.d);p.dataset.i=u.i;gU.appendChild(p);return p;});
+const provEls={};
+for(const [c,p] of Object.entries(P)){const e=document.createElementNS(NS,"path");e.setAttribute("d",p.d);gP.appendChild(e);provEls[c]=e;}
+let vb=null;
+function setVB(b){vb=b;svg.setAttribute("viewBox",`${b.x} ${b.y} ${b.w} ${b.h}`);}
+function fitBox(bb,pad=.06){
+  const r=svg.getBoundingClientRect(), ar=r.width/Math.max(r.height,1);
+  let w=bb[2]-bb[0], h=bb[3]-bb[1]; const cx=(bb[0]+bb[2])/2, cy=(bb[1]+bb[3])/2;
+  w*=1+2*pad; h*=1+2*pad; w=Math.max(w,300); h=Math.max(h,300);
+  if(w/h<ar) w=h*ar; else h=w/ar;
+  setVB({x:cx-w/2,y:cy-h/2,w,h});
+}
+function fitAround(list,minW=2500){
+  const b=unionBox(list), cx=(b[0]+b[2])/2, cy=(b[1]+b[3])/2;
+  const w=Math.max(b[2]-b[0],minW), h=Math.max(b[3]-b[1],minW*.6);
+  fitBox([cx-w/2,cy-h/2,cx+w/2,cy+h/2],.15);
+}
+function unionBox(list){return list.reduce((a,u)=>[Math.min(a[0],u.b[0]),Math.min(a[1],u.b[1]),Math.max(a[2],u.b[2]),Math.max(a[3],u.b[3])],[1e9,1e9,-1e9,-1e9]);}
+function toSvg(cx,cy){const r=svg.getBoundingClientRect();return {x:vb.x+(cx-r.left)/r.width*vb.w,y:vb.y+(cy-r.top)/r.height*vb.h};}
+function zoomAt(f,cx,cy){
+  const r=svg.getBoundingClientRect(); if(cx==null){cx=r.left+r.width/2;cy=r.top+r.height/2;}
+  const p=toSvg(cx,cy); let w=vb.w*f,h=vb.h*f;
+  const full=DATA.bbox[2]-DATA.bbox[0]; if(w>full*1.6){const k=full*1.6/w;w*=k;h*=k;} if(w<200){const k=200/w;w*=k;h*=k;}
+  setVB({x:p.x-(cx-r.left)/r.width*w,y:p.y-(cy-r.top)/r.height*h,w,h});
+}
+svg.addEventListener("wheel",e=>{e.preventDefault();zoomAt(Math.exp(e.deltaY*.0015),e.clientX,e.clientY);},{passive:false});
+const ptrs=new Map(); let drag=null;
+svg.addEventListener("pointerdown",e=>{svg.setPointerCapture(e.pointerId);ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if(ptrs.size===1) drag={x:e.clientX,y:e.clientY,vb:{...vb},moved:false};
+  else if(ptrs.size===2){const [a,b]=[...ptrs.values()];drag={pinch:Math.hypot(a.x-b.x,a.y-b.y),moved:true};}});
+svg.addEventListener("pointermove",e=>{
+  if(!ptrs.has(e.pointerId)){hover(e);return;}
+  ptrs.set(e.pointerId,{x:e.clientX,y:e.clientY});
+  if(!drag) return;
+  if(ptrs.size===2&&drag.pinch){const [a,b]=[...ptrs.values()];const d=Math.hypot(a.x-b.x,a.y-b.y);zoomAt(drag.pinch/d,(a.x+b.x)/2,(a.y+b.y)/2);drag.pinch=d;return;}
+  const dx=e.clientX-drag.x, dy=e.clientY-drag.y;
+  if(!drag.moved&&Math.hypot(dx,dy)>5){drag.moved=true;svg.classList.add("dragging");}
+  if(drag.moved&&drag.vb){const r=svg.getBoundingClientRect();setVB({...drag.vb,x:drag.vb.x-dx/r.width*drag.vb.w,y:drag.vb.y-dy/r.height*drag.vb.h});}
+});
+function endPtr(e){
+  const wasClick=drag&&!drag.moved&&ptrs.size===1;
+  ptrs.delete(e.pointerId); svg.classList.remove("dragging");
+  if(ptrs.size===0){ if(wasClick&&e.type==="pointerup") clickAt(e.clientX,e.clientY); drag=null; }
+}
+svg.addEventListener("pointerup",endPtr); svg.addEventListener("pointercancel",endPtr);
+svg.addEventListener("pointerleave",()=>{tip.style.display="none";});
+$("#zin").onclick=()=>zoomAt(.6); $("#zout").onclick=()=>zoomAt(1.6); $("#zfit").onclick=()=>fitZone();
+const tip=$("#tip");
+function unitAt(cx,cy){const el=document.elementFromPoint(cx,cy);return el&&el.dataset&&el.dataset.i!=null&&el.closest("#units")?U[+el.dataset.i]:null;}
+function hover(e){
+  const showNames=state.mode==="explore"||state.phase==="reveal";
+  const u=showNames?unitAt(e.clientX,e.clientY):null;
+  if(!u||!active.has(u.i)&&state.mode==="explore"){tip.style.display="none";return;}
+  const r=$("#mapwrap").getBoundingClientRect();
+  tip.textContent=shortName(u); tip.style.display="block";
+  tip.style.left=Math.min(e.clientX-r.left+14,r.width-tip.offsetWidth-4)+"px"; tip.style.top=(e.clientY-r.top+14)+"px";
+}
+
+/* ---------- zone filter ---------- */
+const zoneSel=$("#zone");
+(function buildZone(){
+  let h='<option value="all">Toute l\'Indonésie</option><optgroup label="Îles">';
+  DATA.islands.forEach(([k,fr])=>h+=`<option value="i:${esc(k)}">${esc(fr)}</option>`);
+  h+="</optgroup>";
+  DATA.islands.forEach(([k,fr])=>{
+    h+=`<optgroup label="Provinces · ${esc(fr)}">`;
+    Object.entries(P).filter(([c,p])=>p.i===k).sort((a,b)=>a[1].n.localeCompare(b[1].n)).forEach(([c,p])=>h+=`<option value="p:${c}">${esc(p.n)}</option>`);
+    h+="</optgroup>";
+  });
+  zoneSel.innerHTML=h;
+})();
+let active=new Set();
+function inZone(u){
+  const z=zoneSel.value;
+  if(!$("#kota").checked&&u.t==="kota") return false;
+  if(z==="all") return true;
+  if(z.startsWith("i:")) return P[u.p].i===z.slice(2);
+  return u.p===z.slice(2);
+}
+function zoneUnits(){return U.filter(inZone);}
+function zoneUnitsGeo(){const z=zoneSel.value;return U.filter(u=>z==="all"||(z.startsWith("i:")?P[u.p].i===z.slice(2):u.p===z.slice(2)));}
+function fitZone(){fitBox(unionBox(zoneUnitsGeo()));}
+function paintBase(){
+  active=new Set(zoneUnits().map(u=>u.i));
+  els.forEach((e,i)=>{e.setAttribute("class",active.has(i)?"act":"off");});
+  Object.values(provEls).forEach(e=>e.removeAttribute("class"));
+  gM.innerHTML="";
+}
+
+/* ---------- game ---------- */
+const state={mode:"name",queue:[],idx:0,ok:0,streak:0,phase:"idle",step:1,review:false,clicked:null};
+function itemsFor(mode){
+  const zu=zoneUnits(), zs=new Set(zu.map(u=>u.i));
+  if(mode==="name"||mode==="prov") return zu.map(u=>({k:"u:"+u.c,u}));
+  const G=mode==="plate"?PLATES:PHONES, pre=mode==="plate"?"pl:":"ph:";
+  return Object.entries(G).filter(([k,m])=>m.some(u=>zs.has(u.i))).map(([k,m])=>({k:pre+k,code:k,members:m}));
+}
+function start(review){
+  if(state.mode==="explore"){explore();return;}
+  state.review=!!review;
+  let items=itemsFor(state.mode);
+  if(review) items=items.filter(it=>stats[it.k]&&stats[it.k].last===0);
+  shuffle(items);
+  const n=+$("#len").value; if(n&&!review) items=items.slice(0,n);
+  state.queue=items; state.idx=0; state.ok=0; state.streak=0;
+  if(!items.length){paintBase();fitZone();state.phase="idle";
+    banner(review?"Aucune erreur à revoir":"Rien à jouer dans cette zone",review?"dans ce mode et cette zone":"");
+    renderScore();return;}
+  ask();
+}
+function cur(){return state.queue[state.idx];}
+function banner(q,sub){$("#bq").textContent=q;$("#bsub").textContent=sub||"";}
+function ask(){
+  paintBase(); fitZone(); state.phase="ask"; state.step=1; state.clicked=null;
+  const it=cur(); $("#nextBtn").disabled=true;
+  const left=`${state.idx+1} / ${state.queue.length}`+(state.review?" · révision":"");
+  if(state.mode==="name") banner(shortName(it.u),left);
+  else if(state.mode==="prov"){
+    if(zoneSel.value.startsWith("p:")){state.step=2;banner(shortName(it.u),left);}
+    else banner(shortName(it.u),"Étape 1 : clique la province · "+left);
+  }
+  else if(state.mode==="plate") banner("Plaque "+it.code,"Clique un kabupaten de la zone · "+left);
+  else banner("Indicatif "+it.code,"Clique un kabupaten de la zone · "+left);
+  $("#card").innerHTML='<div class="muted">Clique sur la carte pour répondre.</div>';
+  renderScore();
+}
+function record(k,ok){const s=stats[k]||{n:0,ok:0,last:0};s.n++;if(ok)s.ok++;s.last=ok?1:0;stats[k]=s;save("stats",stats);}
+function clickAt(cx,cy){
+  const u=unitAt(cx,cy);
+  if(state.mode==="explore"){if(u&&active.has(u.i)){paintBase();els[u.i].classList.add("sel");showCard(u);}return;}
+  if(state.phase!=="ask"||!u||!active.has(u.i)&&state.mode!=="prov") return;
+  const it=cur();
+  if(state.mode==="prov"&&state.step===1){
+    const good=u.p===it.u.p;
+    provEls[it.u.p].setAttribute("class","hl");
+    state.provOk=good;
+    const pu=U.filter(x=>x.p===it.u.p);
+    fitBox(unionBox(pu));
+    U.forEach(x=>{els[x.i].setAttribute("class",x.p===it.u.p&&inZone(x)?"act":"off");});
+    state.step=2;
+    banner(shortName(it.u),(good?"Bonne province : ":"Non, c'était ")+P[it.u.p].n+" · étape 2 : le kabupaten");
+    return;
+  }
+  let good;
+  if(state.mode==="name"||state.mode==="prov") good=u===it.u;
+  else good=it.members.includes(u);
+  state.clicked=u;
+  record(it.k,good);
+  if(good){state.ok++;state.streak++;}else state.streak=0;
+  reveal(good,u);
+}
+function mark(u,cls){
+  const c=document.createElementNS(NS,"circle");
+  c.setAttribute("cx",u.pt[0]);c.setAttribute("cy",u.pt[1]);c.setAttribute("r",Math.max(vb.w/90,40));
+  c.setAttribute("fill","none");c.setAttribute("stroke",cls==="ok"?"var(--ok)":"var(--ko)");c.setAttribute("stroke-width",3);
+  gM.appendChild(c);
+}
+function reveal(good,u){
+  state.phase="reveal";
+  const it=cur();
+  if(state.mode==="plate"||state.mode==="phone"){
+    it.members.forEach(m=>els[m.i].setAttribute("class","zone"));
+    if(!good) els[u.i].setAttribute("class","ko"); else els[u.i].setAttribute("class","ok");
+    const zb=unionBox(it.members);
+    if((zb[2]-zb[0])<vb.w/40) fitAround([...it.members,u]);
+    showZoneCard(it,good,u);
+  }else{
+    els[it.u.i].setAttribute("class","ok");
+    if(!good) els[u.i].setAttribute("class","ko");
+    const b=it.u.b;
+    if((b[2]-b[0])<vb.w/40) fitAround(good?[it.u]:[it.u,u]);
+    mark(it.u,"ok");
+    showCard(it.u,good,good?null:u);
+  }
+  banner(good?"Juste !":"Raté",state.mode==="plate"?"Plaque "+it.code:state.mode==="phone"?"Indicatif "+it.code:shortName(it.u));
+  $("#nextBtn").disabled=false; $("#nextBtn").focus({preventScroll:true});
+  renderScore();
+}
+function next(){
+  if(state.phase!=="reveal") return;
+  state.idx++;
+  if(state.idx>=state.queue.length){finish();return;}
+  ask();
+}
+function finish(){
+  state.phase="done"; paintBase(); fitZone();
+  const n=state.queue.length, pct=Math.round(100*state.ok/n);
+  banner(`Série terminée : ${state.ok} / ${n} (${pct} %)`,"Nouvelle série ou revoir mes erreurs");
+  $("#nextBtn").disabled=true; updateErrCount();
+}
+function renderScore(){
+  $("#sOk").textContent=state.ok;
+  $("#sDone").textContent=`${Math.min(state.idx+(state.phase==="reveal"?1:0),state.queue.length)}/${state.queue.length}`;
+  $("#sStreak").textContent=state.streak; updateErrCount();
+}
+function updateErrCount(){
+  if(state.mode==="explore"){$("#errBtn").disabled=true;$("#errBtn").textContent="Revoir mes erreurs";return;}
+  const n=itemsFor(state.mode).filter(it=>stats[it.k]&&stats[it.k].last===0).length;
+  $("#errBtn").textContent=`Revoir mes erreurs (${n})`; $("#errBtn").disabled=!n;
+}
+function phoneHtml(u){return u.ph.length?u.ph.map(esc).join(", "):'<span class="muted">non renseigné</span>';}
+function showCard(u,good,wrong){
+  let h="";
+  if(good!=null) h+=`<div class="res ${good?"ok":"ko"}">${good?"Juste":"Tu as cliqué "+esc(shortName(wrong))}</div>`;
+  if(state.mode==="prov"&&good!=null&&state.provOk!=null) h+=`<div class="muted" style="margin-bottom:6px">Province : ${state.provOk?"juste":"ratée"}</div>`;
+  const s=stats["u:"+u.c];
+  h+=`<h2>${esc(u.n)}</h2><div class="kind">${u.t==="kota"?"Kota":"Kabupaten"} · ${esc(P[u.p].n)} · ${esc(ISL[P[u.p].i])}</div>
+  <dl><dt>Chef-lieu</dt><dd>${esc(u.cap||"–")}</dd>
+  <dt>Plaque</dt><dd><span class="plate">${esc(u.pl)}</span></dd>
+  <dt>Indicatif</dt><dd>${phoneHtml(u)}</dd>
+  <dt>Code</dt><dd>${esc(u.c)}</dd>
+  ${s?`<dt>Mes réponses</dt><dd>${s.ok} / ${s.n}</dd>`:""}</dl>`;
+  if(wrong) h+=`<div class="muted" style="margin-top:8px">${esc(shortName(wrong))} : ${esc(P[wrong.p].n)}, plaque ${esc(wrong.pl)}${wrong.ph.length?", indicatif "+esc(wrong.ph.join("/")):""}</div>`;
+  $("#card").innerHTML=h;
+}
+function showZoneCard(it,good,u){
+  const plate=state.mode==="plate";
+  const provs=[...new Set(it.members.map(m=>P[m.p].n))];
+  let h=`<div class="res ${good?"ok":"ko"}">${good?"Juste":"Raté"} : ${esc(shortName(u))}</div>
+  <h2>${plate?`<span class="plate">${esc(it.code)}</span>`:esc(it.code)}</h2>
+  <div class="kind">${it.members.length} kabupaten/kota · ${esc(provs.join(", "))}</div>`;
+  if(!good) h+=`<div class="muted">${esc(shortName(u))} : ${plate?"plaque "+esc(u.pl):"indicatif "+(u.ph.length?esc(u.ph.join("/")):"non renseigné")}</div>`;
+  h+=`<div class="members">${it.members.map(m=>esc(shortName(m))).join("<br>")}</div>`;
+  $("#card").innerHTML=h;
+}
+function explore(){
+  state.phase="explore"; state.queue=[]; state.idx=0; paintBase(); fitZone();
+  banner("Explorer","Survole pour voir les noms, clique pour la fiche");
+  $("#card").innerHTML='<div class="muted">Mode libre : aucune note. Clique un kabupaten pour voir sa fiche.</div>';
+  $("#nextBtn").disabled=true; renderScore();
+}
+
+/* ---------- stats dialog ---------- */
+function statsHtml(){
+  const rows=DATA.islands.map(([k,fr])=>{let n=0,ok=0;U.filter(u=>P[u.p].i===k).forEach(u=>{const s=stats["u:"+u.c];if(s){n+=s.n;ok+=s.ok;}});return {fr,n,ok};});
+  let h='<p class="muted">Modes « Nom » et « Province d\'abord », par île.</p><table><tr><th>Île</th><th class="n">Réponses</th><th class="n">Justes</th><th style="width:30%"></th></tr>';
+  rows.forEach(r=>{const p=r.n?Math.round(100*r.ok/r.n):0;h+=`<tr><td>${esc(r.fr)}</td><td class="n">${r.n}</td><td class="n">${r.n?p+" %":"–"}</td><td><div class="bar"><i style="width:${p}%"></i></div></td></tr>`;});
+  h+="</table>";
+  const label=k=>{const [t,c]=[k.slice(0,k.indexOf(":")),k.slice(k.indexOf(":")+1)];return t==="u"?(byCode[c]?shortName(byCode[c]):c):(t==="pl"?"Plaque ":"Indicatif ")+c;};
+  const worst=Object.entries(stats).filter(([k,s])=>s.n-s.ok>0).sort((a,b)=>((b[1].n-b[1].ok)-(a[1].n-a[1].ok))||(a[1].ok/a[1].n-b[1].ok/b[1].n)).slice(0,15);
+  h+='<h3 style="font-size:15px;margin:16px 0 6px">Les plus ratés</h3>';
+  if(!worst.length) h+='<p class="muted">Pas encore d\'erreur enregistrée.</p>';
+  else{h+='<table><tr><th>Élément</th><th class="n">Erreurs</th><th class="n">Justes</th></tr>';worst.forEach(([k,s])=>h+=`<tr><td>${esc(label(k))}</td><td class="n">${s.n-s.ok}</td><td class="n">${s.ok}</td></tr>`);h+="</table>";}
+  return h;
+}
+$("#statsBtn").onclick=()=>{$("#statsBody").innerHTML=statsHtml();$("#statsdlg").showModal();};
+$("#closeStats").onclick=()=>$("#statsdlg").close();
+$("#resetStats").onclick=()=>{stats={};save("stats",stats);$("#statsBody").innerHTML=statsHtml();updateErrCount();};
+
+/* ---------- controls ---------- */
+function setMode(m){
+  state.mode=m; document.querySelectorAll("#modes button").forEach(b=>b.classList.toggle("on",b.dataset.m===m));
+  $("#len").disabled=m==="explore"; $("#startBtn").disabled=m==="explore";
+  savePrefs(); start(false);
+}
+function savePrefs(){save("prefs",{mode:state.mode,zone:zoneSel.value,kota:$("#kota").checked,len:$("#len").value});}
+document.querySelectorAll("#modes button").forEach(b=>b.onclick=()=>setMode(b.dataset.m));
+zoneSel.onchange=()=>{savePrefs();start(false);};
+$("#kota").onchange=()=>{savePrefs();start(false);};
+$("#len").onchange=()=>{savePrefs();start(false);};
+$("#startBtn").onclick=()=>start(false);
+$("#errBtn").onclick=()=>start(true);
+$("#nextBtn").onclick=next;
+document.addEventListener("keydown",e=>{
+  if(e.target.tagName==="SELECT"||$("#statsdlg").open) return;
+  if((e.key==="Enter"||e.key===" ")&&state.phase==="reveal"){e.preventDefault();next();}
+});
+$("#themeBtn").onclick=()=>{
+  const r=document.documentElement, dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
+  r.dataset.theme=dark?"light":"dark"; save("theme",r.dataset.theme);
+};
+const th=load("theme",null); if(th) document.documentElement.dataset.theme=th;
+let rz; new ResizeObserver(()=>{clearTimeout(rz);rz=setTimeout(()=>{if(state.phase!=="reveal")fitZone();},80);}).observe($("#mapwrap"));
+
+/* ---------- init ---------- */
+if(prefs.zone&&[...zoneSel.options].some(o=>o.value===prefs.zone)) zoneSel.value=prefs.zone;
+if(prefs.kota===false) $("#kota").checked=false;
+if(prefs.len) $("#len").value=prefs.len;
+fitBox(DATA.bbox);
+setMode(prefs.mode||"name");
+})();
+</script>
+</body>
+</html>

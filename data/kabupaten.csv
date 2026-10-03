@@ -1,0 +1,515 @@
+code,type,name,province_code,province,island,capital,plate,phone
+11.01,kab,Aceh Selatan,11,Aceh,Sumatra,Tapak Tuan,BL,0656;0657
+11.02,kab,Aceh Tenggara,11,Aceh,Sumatra,Kutacane,BL,0629
+11.03,kab,Aceh Timur,11,Aceh,Sumatra,Idi Rayeuk,BL,0646
+11.04,kab,Aceh Tengah,11,Aceh,Sumatra,Takengon,BL,0643
+11.05,kab,Aceh Barat,11,Aceh,Sumatra,Meulaboh,BL,0655
+11.06,kab,Aceh Besar,11,Aceh,Sumatra,Kota Jantho,BL,0651
+11.07,kab,Pidie,11,Aceh,Sumatra,Sigli,BL,0653
+11.08,kab,Aceh Utara,11,Aceh,Sumatra,Lhoksukon,BL,0645
+11.09,kab,Simeulue,11,Aceh,Sumatra,Sinabang,BL,0650
+11.10,kab,Aceh Singkil,11,Aceh,Sumatra,Singkil,BL,0658
+11.11,kab,Bireuen,11,Aceh,Sumatra,Bireuen,BL,0644
+11.12,kab,Aceh Barat Daya,11,Aceh,Sumatra,Blangpidie,BL,0659
+11.13,kab,Gayo Lues,11,Aceh,Sumatra,Blang Kejeren,BL,0642
+11.14,kab,Aceh Jaya,11,Aceh,Sumatra,Calang,BL,0651;0654
+11.15,kab,Nagan Raya,11,Aceh,Sumatra,Suka Makmue,BL,0655
+11.16,kab,Aceh Tamiang,11,Aceh,Sumatra,Karang Baru,BL,0641
+11.17,kab,Bener Meriah,11,Aceh,Sumatra,Simpang Tiga Redelong,BL,0643
+11.18,kab,Pidie Jaya,11,Aceh,Sumatra,Meureudu,BL,0653
+11.71,kota,Banda Aceh,11,Aceh,Sumatra,Banda Aceh,BL,0651
+11.72,kota,Sabang,11,Aceh,Sumatra,Sabang,BL,0652
+11.73,kota,Lhokseumawe,11,Aceh,Sumatra,Lhokseumawe,BL,0645
+11.74,kota,Langsa,11,Aceh,Sumatra,Langsa,BL,0641
+11.75,kota,Subulussalam,11,Aceh,Sumatra,Subulussalam,BL,0627
+12.01,kab,Tapanuli Tengah,12,Sumatera Utara,Sumatra,Pandan,BB,0631
+12.02,kab,Tapanuli Utara,12,Sumatera Utara,Sumatra,Tarutung,BB,0633
+12.03,kab,Tapanuli Selatan,12,Sumatera Utara,Sumatra,Sipirok,BB,0634
+12.04,kab,Nias,12,Sumatera Utara,Sumatra,Gido,BB,0639
+12.05,kab,Langkat,12,Sumatera Utara,Sumatra,Stabat,BK,061;0620
+12.06,kab,Karo,12,Sumatera Utara,Sumatra,Kabanjahe,BK,0628
+12.07,kab,Deli Serdang,12,Sumatera Utara,Sumatra,Lubuk Pakam,BK,061;0628
+12.08,kab,Simalungun,12,Sumatera Utara,Sumatra,Raya,BK,0622;0625
+12.09,kab,Asahan,12,Sumatera Utara,Sumatra,Kisaran,BK,0623
+12.10,kab,Labuhanbatu,12,Sumatera Utara,Sumatra,Rantau Prapat,BK,0624
+12.11,kab,Dairi,12,Sumatera Utara,Sumatra,Sidikalang,BB,0627
+12.12,kab,Toba,12,Sumatera Utara,Sumatra,Balige,BB,0625;0632
+12.13,kab,Mandailing Natal,12,Sumatera Utara,Sumatra,Panyabungan,BB,0636
+12.14,kab,Nias Selatan,12,Sumatera Utara,Sumatra,Teluk Dalam,BB,0630
+12.15,kab,Pakpak Bharat,12,Sumatera Utara,Sumatra,Salak,BB,0627
+12.16,kab,Humbang Hasundutan,12,Sumatera Utara,Sumatra,Dolok Sanggul,BB,0633
+12.17,kab,Samosir,12,Sumatera Utara,Sumatra,Pangururan,BB,0625;0626
+12.18,kab,Serdang Bedagai,12,Sumatera Utara,Sumatra,Sei Rampah,BK,061;0621
+12.19,kab,Batu Bara,12,Sumatera Utara,Sumatra,Limapuluh,BK,0622
+12.20,kab,Padang Lawas Utara,12,Sumatera Utara,Sumatra,Gunung Tua,BB,0635
+12.21,kab,Padang Lawas,12,Sumatera Utara,Sumatra,Sibuhuan,BB,0636
+12.22,kab,Labuhanbatu Selatan,12,Sumatera Utara,Sumatra,Pinang,BK,0624
+12.23,kab,Labuhanbatu Utara,12,Sumatera Utara,Sumatra,Aek Kanopan,BK,0624
+12.24,kab,Nias Utara,12,Sumatera Utara,Sumatra,Lotu,BB,0639
+12.25,kab,Nias Barat,12,Sumatera Utara,Sumatra,Lahomi,BB,0639
+12.71,kota,Medan,12,Sumatera Utara,Sumatra,Medan,BK,061
+12.72,kota,Pematangsiantar,12,Sumatera Utara,Sumatra,Pematangsiantar,BK,0622
+12.73,kota,Sibolga,12,Sumatera Utara,Sumatra,Sibolga,BB,0631
+12.74,kota,Tanjungbalai,12,Sumatera Utara,Sumatra,Tanjungbalai,BK,0623
+12.75,kota,Binjai,12,Sumatera Utara,Sumatra,Binjai,BK,061
+12.76,kota,Tebing Tinggi,12,Sumatera Utara,Sumatra,Tebing Tinggi,BK,0621
+12.77,kota,Padangsidimpuan,12,Sumatera Utara,Sumatra,Padangsidimpuan,BB,0634
+12.78,kota,Gunungsitoli,12,Sumatera Utara,Sumatra,Gunungsitoli,BB,0639
+13.01,kab,Pesisir Selatan,13,Sumatera Barat,Sumatra,Painan,BA,0756;0757
+13.02,kab,Solok,13,Sumatera Barat,Sumatra,Arosuka,BA,0755
+13.03,kab,Sijunjung,13,Sumatera Barat,Sumatra,Muaro Sijunjung,BA,0754
+13.04,kab,Tanah Datar,13,Sumatera Barat,Sumatra,Batusangkar,BA,0752
+13.05,kab,Padang Pariaman,13,Sumatera Barat,Sumatra,Parit Malintang,BA,0751
+13.06,kab,Agam,13,Sumatera Barat,Sumatra,Lubuk Basung,BA,0752
+13.07,kab,Lima Puluh Kota,13,Sumatera Barat,Sumatra,Sarilamak,BA,0752
+13.08,kab,Pasaman,13,Sumatera Barat,Sumatra,Lubuk Sikaping,BA,0753
+13.09,kab,Kepulauan Mentawai,13,Sumatera Barat,Sumatra,Tuapejat,BA,0759
+13.10,kab,Dharmasraya,13,Sumatera Barat,Sumatra,Pulau Punjung,BA,0754
+13.11,kab,Solok Selatan,13,Sumatera Barat,Sumatra,Padang Aro,BA,0755
+13.12,kab,Pasaman Barat,13,Sumatera Barat,Sumatra,Simpang Ampek,BA,0753
+13.71,kota,Padang,13,Sumatera Barat,Sumatra,Padang,BA,0751
+13.72,kota,Solok,13,Sumatera Barat,Sumatra,Solok,BA,0755
+13.73,kota,Sawahlunto,13,Sumatera Barat,Sumatra,Sawahlunto,BA,0754
+13.74,kota,Padang Panjang,13,Sumatera Barat,Sumatra,Padangpanjang,BA,0752
+13.75,kota,Bukittinggi,13,Sumatera Barat,Sumatra,Bukittinggi,BA,0752
+13.76,kota,Payakumbuh,13,Sumatera Barat,Sumatra,Payakumbuh,BA,0752
+13.77,kota,Pariaman,13,Sumatera Barat,Sumatra,Pariaman,BA,0751
+14.01,kab,Kampar,14,Riau,Sumatra,Bangkinang,BM,0762
+14.02,kab,Indragiri Hulu,14,Riau,Sumatra,Rengat,BM,0769
+14.03,kab,Bengkalis,14,Riau,Sumatra,Bengkalis,BM,0765;0766
+14.04,kab,Indragiri Hilir,14,Riau,Sumatra,Tembilahan,BM,0768
+14.05,kab,Pelalawan,14,Riau,Sumatra,Pangkalan Kerinci,BM,0761
+14.06,kab,Rokan Hulu,14,Riau,Sumatra,Pasir Pengaraian,BM,0762
+14.07,kab,Rokan Hilir,14,Riau,Sumatra,Bagansiapiapi,BM,0624;0765;0767
+14.08,kab,Siak,14,Riau,Sumatra,Siak Sri Indrapura,BM,0761;0764
+14.09,kab,Kuantan Singingi,14,Riau,Sumatra,Taluk Kuantan,BM,0760
+14.10,kab,Kepulauan Meranti,14,Riau,Sumatra,Selatpanjang,BM,0763
+14.71,kota,Pekanbaru,14,Riau,Sumatra,Pekanbaru,BM,0761
+14.72,kota,Dumai,14,Riau,Sumatra,Dumai,BM,0765
+15.01,kab,Kerinci,15,Jambi,Sumatra,Siulak,BH,0748
+15.02,kab,Merangin,15,Jambi,Sumatra,Bangko,BH,0746
+15.03,kab,Sarolangun,15,Jambi,Sumatra,Sarolangun,BH,0745
+15.04,kab,Batanghari,15,Jambi,Sumatra,Muara Bulian,BH,0743
+15.05,kab,Muaro Jambi,15,Jambi,Sumatra,Sengeti,BH,0741
+15.06,kab,Tanjung Jabung Barat,15,Jambi,Sumatra,Kuala Tungkal,BH,0742
+15.07,kab,Tanjung Jabung Timur,15,Jambi,Sumatra,Muara Sabak,BH,0740
+15.08,kab,Bungo,15,Jambi,Sumatra,Muara Bungo,BH,0747
+15.09,kab,Tebo,15,Jambi,Sumatra,Muara Tebo,BH,0744
+15.71,kota,Jambi,15,Jambi,Sumatra,Jambi,BH,0741
+15.72,kota,Sungai Penuh,15,Jambi,Sumatra,Sungaipenuh,BH,0748
+16.01,kab,Ogan Komering Ulu,16,Sumatera Selatan,Sumatra,Baturaja,BG,0735
+16.02,kab,Ogan Komering Ilir,16,Sumatera Selatan,Sumatra,Kayu Agung,BG,0712
+16.03,kab,Muara Enim,16,Sumatera Selatan,Sumatra,Muara Enim,BG,0713;0734
+16.04,kab,Lahat,16,Sumatera Selatan,Sumatra,Lahat,BG,0730;0731
+16.05,kab,Musi Rawas,16,Sumatera Selatan,Sumatra,Muara Beliti Baru,BG,0733
+16.06,kab,Musi Banyuasin,16,Sumatera Selatan,Sumatra,Sekayu,BG,0714
+16.07,kab,Banyuasin,16,Sumatera Selatan,Sumatra,Pangkalan Balai,BG,0711
+16.08,kab,Ogan Komering Ulu Timur,16,Sumatera Selatan,Sumatra,Martapura,BG,0735
+16.09,kab,Ogan Komering Ulu Selatan,16,Sumatera Selatan,Sumatra,Muaradua,BG,0735
+16.10,kab,Ogan Ilir,16,Sumatera Selatan,Sumatra,Indralaya,BG,0711;0712
+16.11,kab,Empat Lawang,16,Sumatera Selatan,Sumatra,Tebing Tinggi,BG,0702
+16.12,kab,Penukal Abab Lematang Ilir,16,Sumatera Selatan,Sumatra,Talang Ubi,BG,0713
+16.13,kab,Musi Rawas Utara,16,Sumatera Selatan,Sumatra,Rupit,BG,0733
+16.71,kota,Palembang,16,Sumatera Selatan,Sumatra,Palembang,BG,0711
+16.72,kota,Pagar Alam,16,Sumatera Selatan,Sumatra,Pagar Alam,BG,0730
+16.73,kota,Lubuklinggau,16,Sumatera Selatan,Sumatra,Lubuklinggau,BG,0733
+16.74,kota,Prabumulih,16,Sumatera Selatan,Sumatra,Prabumulih,BG,0713
+17.01,kab,Bengkulu Selatan,17,Bengkulu,Sumatra,Manna,BD,0739
+17.02,kab,Rejang Lebong,17,Bengkulu,Sumatra,Curup,BD,0732
+17.03,kab,Bengkulu Utara,17,Bengkulu,Sumatra,Arga Makmur,BD,0736;0737
+17.04,kab,Kaur,17,Bengkulu,Sumatra,Bintuhan,BD,0739
+17.05,kab,Seluma,17,Bengkulu,Sumatra,Tais,BD,0736
+17.06,kab,Mukomuko,17,Bengkulu,Sumatra,Mukomuko,BD,0737
+17.07,kab,Lebong,17,Bengkulu,Sumatra,Muara Aman,BD,0738
+17.08,kab,Kepahiang,17,Bengkulu,Sumatra,Kepahiang,BD,0732
+17.09,kab,Bengkulu Tengah,17,Bengkulu,Sumatra,Karang Tinggi,BD,0736
+17.71,kota,Bengkulu,17,Bengkulu,Sumatra,Bengkulu,BD,0736
+18.01,kab,Lampung Selatan,18,Lampung,Sumatra,Kalianda,BE,0721;0727
+18.02,kab,Lampung Tengah,18,Lampung,Sumatra,Gunung Sugih,BE,0725
+18.03,kab,Lampung Utara,18,Lampung,Sumatra,Kotabumi,BE,0724
+18.04,kab,Lampung Barat,18,Lampung,Sumatra,Liwa,BE,0728
+18.05,kab,Tulang Bawang,18,Lampung,Sumatra,Menggala,BE,0726
+18.06,kab,Tanggamus,18,Lampung,Sumatra,Kota Agung,BE,0722
+18.07,kab,Lampung Timur,18,Lampung,Sumatra,Sukadana,BE,0725
+18.08,kab,Way Kanan,18,Lampung,Sumatra,Blambangan Umpu,BE,0723
+18.09,kab,Pesawaran,18,Lampung,Sumatra,Gedong Tataan,BE,0721;0727
+18.10,kab,Pringsewu,18,Lampung,Sumatra,Pringsewu,BE,0729
+18.11,kab,Mesuji,18,Lampung,Sumatra,Mesuji,BE,0726
+18.12,kab,Tulang Bawang Barat,18,Lampung,Sumatra,Tulang Bawang Tengah,BE,0726
+18.13,kab,Pesisir Barat,18,Lampung,Sumatra,Krui,BE,0728
+18.71,kota,Bandar Lampung,18,Lampung,Sumatra,Bandar Lampung,BE,0721
+18.72,kota,Metro,18,Lampung,Sumatra,Metro,BE,0725
+19.01,kab,Bangka,19,Kepulauan Bangka Belitung,Sumatra,Sungai Liat,BN,0715;0717
+19.02,kab,Belitung,19,Kepulauan Bangka Belitung,Sumatra,Tanjung Pandan,BN,0719
+19.03,kab,Bangka Selatan,19,Kepulauan Bangka Belitung,Sumatra,Toboali,BN,0718
+19.04,kab,Bangka Tengah,19,Kepulauan Bangka Belitung,Sumatra,Koba,BN,0718
+19.05,kab,Bangka Barat,19,Kepulauan Bangka Belitung,Sumatra,Muntok,BN,0716
+19.06,kab,Belitung Timur,19,Kepulauan Bangka Belitung,Sumatra,Manggar,BN,0719
+19.71,kota,Pangkalpinang,19,Kepulauan Bangka Belitung,Sumatra,Pangkalpinang,BN,0717
+21.01,kab,Bintan,21,Kepulauan Riau,Sumatra,Bandar Seri Bentan,BP,0771
+21.02,kab,Karimun,21,Kepulauan Riau,Sumatra,Tanjung Balai Karimun,BP,0777;0779
+21.03,kab,Natuna,21,Kepulauan Riau,Sumatra,Ranai,BP,0773
+21.04,kab,Lingga,21,Kepulauan Riau,Sumatra,Daik,BP,0776
+21.05,kab,Kepulauan Anambas,21,Kepulauan Riau,Sumatra,Tarempa,BP,0772
+21.71,kota,Batam,21,Kepulauan Riau,Sumatra,Batam,BP,0770;0778
+21.72,kota,Tanjungpinang,21,Kepulauan Riau,Sumatra,Tanjungpinang,BP,0771
+31.01,kab,Kepulauan Seribu,31,DKI Jakarta,Java,Pulau Pramuka,B,021
+31.71,kota,Jakarta Pusat,31,DKI Jakarta,Java,Menteng,B,021
+31.72,kota,Jakarta Utara,31,DKI Jakarta,Java,Koja,B,021
+31.73,kota,Jakarta Barat,31,DKI Jakarta,Java,Kembangan,B,021
+31.74,kota,Jakarta Selatan,31,DKI Jakarta,Java,Kebayoran Baru,B,021
+31.75,kota,Jakarta Timur,31,DKI Jakarta,Java,Cakung,B,021
+32.01,kab,Bogor,32,Jawa Barat,Java,Cibinong,F,021;0251
+32.02,kab,Sukabumi,32,Jawa Barat,Java,Palabuhanratu,F,0266
+32.03,kab,Cianjur,32,Jawa Barat,Java,Cianjur,F,0263;0266
+32.04,kab,Bandung,32,Jawa Barat,Java,Soreang,D,022
+32.05,kab,Garut,32,Jawa Barat,Java,Tarogong Kidul,Z,0262
+32.06,kab,Tasikmalaya,32,Jawa Barat,Java,Singaparna,Z,0265
+32.07,kab,Ciamis,32,Jawa Barat,Java,Ciamis,Z,0265
+32.08,kab,Kuningan,32,Jawa Barat,Java,Kuningan,E,0232
+32.09,kab,Cirebon,32,Jawa Barat,Java,Sumber,E,0231
+32.10,kab,Majalengka,32,Jawa Barat,Java,Majalengka,E,0233
+32.11,kab,Sumedang,32,Jawa Barat,Java,Sumedang Utara,Z,022;0261
+32.12,kab,Indramayu,32,Jawa Barat,Java,Indramayu,E,0234
+32.13,kab,Subang,32,Jawa Barat,Java,Subang,T,0260
+32.14,kab,Purwakarta,32,Jawa Barat,Java,Purwakarta,T,0264
+32.15,kab,Karawang,32,Jawa Barat,Java,Karawang Barat,T,0264;0267
+32.16,kab,Bekasi,32,Jawa Barat,Java,Cikarang Pusat,B,021
+32.17,kab,Bandung Barat,32,Jawa Barat,Java,Ngamprah,D,022
+32.18,kab,Pangandaran,32,Jawa Barat,Java,Parigi,Z,0265
+32.71,kota,Bogor,32,Jawa Barat,Java,Bogor,F,0251
+32.72,kota,Sukabumi,32,Jawa Barat,Java,Sukabumi,F,0266
+32.73,kota,Bandung,32,Jawa Barat,Java,Bandung,D,022
+32.74,kota,Cirebon,32,Jawa Barat,Java,Cirebon,E,0231
+32.75,kota,Bekasi,32,Jawa Barat,Java,Bekasi,B,021
+32.76,kota,Depok,32,Jawa Barat,Java,Depok,B,021;0251
+32.77,kota,Cimahi,32,Jawa Barat,Java,Cimahi,D,022
+32.78,kota,Tasikmalaya,32,Jawa Barat,Java,Tasikmalaya,Z,0265
+32.79,kota,Banjar,32,Jawa Barat,Java,Banjar,Z,0265
+33.01,kab,Cilacap,33,Jawa Tengah,Java,Cilacap,R,0280;0282
+33.02,kab,Banyumas,33,Jawa Tengah,Java,Purwokerto,R,0281;0282;0287
+33.03,kab,Purbalingga,33,Jawa Tengah,Java,Purbalingga,R,0281
+33.04,kab,Banjarnegara,33,Jawa Tengah,Java,Banjarnegara,R,0286
+33.05,kab,Kebumen,33,Jawa Tengah,Java,Kebumen,AA,0287
+33.06,kab,Purworejo,33,Jawa Tengah,Java,Purworejo,AA,0275
+33.07,kab,Wonosobo,33,Jawa Tengah,Java,Wonosobo,AA,0286
+33.08,kab,Magelang,33,Jawa Tengah,Java,Mungkid,AA,0293
+33.09,kab,Boyolali,33,Jawa Tengah,Java,Boyolali,AD,0271;0276
+33.10,kab,Klaten,33,Jawa Tengah,Java,Klaten,AD,0272
+33.11,kab,Sukoharjo,33,Jawa Tengah,Java,Sukoharjo,AD,0271
+33.12,kab,Wonogiri,33,Jawa Tengah,Java,Wonogiri,AD,0273
+33.13,kab,Karanganyar,33,Jawa Tengah,Java,Karanganyar,AD,0271
+33.14,kab,Sragen,33,Jawa Tengah,Java,Sragen,AD,0271
+33.15,kab,Grobogan,33,Jawa Tengah,Java,Purwodadi,K,0292
+33.16,kab,Blora,33,Jawa Tengah,Java,Blora,K,0296
+33.17,kab,Rembang,33,Jawa Tengah,Java,Rembang,K,0295;0356
+33.18,kab,Pati,33,Jawa Tengah,Java,Pati,K,0295
+33.19,kab,Kudus,33,Jawa Tengah,Java,Kudus,K,0291
+33.20,kab,Jepara,33,Jawa Tengah,Java,Jepara,K,0291;0297
+33.21,kab,Demak,33,Jawa Tengah,Java,Demak,H,024;0291
+33.22,kab,Semarang,33,Jawa Tengah,Java,Ungaran,H,024;0298
+33.23,kab,Temanggung,33,Jawa Tengah,Java,Temanggung,AA,0293
+33.24,kab,Kendal,33,Jawa Tengah,Java,Kendal,H,0294
+33.25,kab,Batang,33,Jawa Tengah,Java,Batang,G,0285;0294
+33.26,kab,Pekalongan,33,Jawa Tengah,Java,Kajen,G,0285
+33.27,kab,Pemalang,33,Jawa Tengah,Java,Pemalang,G,0284;0285
+33.28,kab,Tegal,33,Jawa Tengah,Java,Slawi,G,0283;0284
+33.29,kab,Brebes,33,Jawa Tengah,Java,Brebes,G,0283;0289
+33.71,kota,Magelang,33,Jawa Tengah,Java,Magelang,AA,0293
+33.72,kota,Surakarta,33,Jawa Tengah,Java,Surakarta,AD,0271
+33.73,kota,Salatiga,33,Jawa Tengah,Java,Salatiga,H,0298
+33.74,kota,Semarang,33,Jawa Tengah,Java,Semarang,H,024
+33.75,kota,Pekalongan,33,Jawa Tengah,Java,Pekalongan,G,0285
+33.76,kota,Tegal,33,Jawa Tengah,Java,Tegal,G,0283
+34.01,kab,Kulon Progo,34,DI Yogyakarta,Java,Wates,AB,0274
+34.02,kab,Bantul,34,DI Yogyakarta,Java,Bantul,AB,0274
+34.03,kab,Gunungkidul,34,DI Yogyakarta,Java,Wonosari,AB,0274
+34.04,kab,Sleman,34,DI Yogyakarta,Java,Sleman,AB,0274
+34.71,kota,Yogyakarta,34,DI Yogyakarta,Java,Yogyakarta,AB,0274
+35.01,kab,Pacitan,35,Jawa Timur,Java,Pacitan,AE,0357
+35.02,kab,Ponorogo,35,Jawa Timur,Java,Ponorogo,AE,0352
+35.03,kab,Trenggalek,35,Jawa Timur,Java,Trenggalek,AG,0355
+35.04,kab,Tulungagung,35,Jawa Timur,Java,Tulungagung,AG,0355
+35.05,kab,Blitar,35,Jawa Timur,Java,Kanigoro,AG,0342
+35.06,kab,Kediri,35,Jawa Timur,Java,Ngasem,AG,0354
+35.07,kab,Malang,35,Jawa Timur,Java,Kepanjen,N,0341;0354
+35.08,kab,Lumajang,35,Jawa Timur,Java,Lumajang,N,0334
+35.09,kab,Jember,35,Jawa Timur,Java,Jember,P,0331;0336
+35.10,kab,Banyuwangi,35,Jawa Timur,Java,Banyuwangi,P,0333
+35.11,kab,Bondowoso,35,Jawa Timur,Java,Bondowoso,P,0332
+35.12,kab,Situbondo,35,Jawa Timur,Java,Situbondo,P,0338
+35.13,kab,Probolinggo,35,Jawa Timur,Java,Kraksaan,N,0335
+35.14,kab,Pasuruan,35,Jawa Timur,Java,Bangil,N,0343
+35.15,kab,Sidoarjo,35,Jawa Timur,Java,Sidoarjo,W,031;0343
+35.16,kab,Mojokerto,35,Jawa Timur,Java,Mojosari,S,031;0321;0343
+35.17,kab,Jombang,35,Jawa Timur,Java,Jombang,S,0321
+35.18,kab,Nganjuk,35,Jawa Timur,Java,Nganjuk,AG,0358
+35.19,kab,Madiun,35,Jawa Timur,Java,Caruban,AE,0351
+35.20,kab,Magetan,35,Jawa Timur,Java,Magetan,AE,0351
+35.21,kab,Ngawi,35,Jawa Timur,Java,Ngawi,AE,0351
+35.22,kab,Bojonegoro,35,Jawa Timur,Java,Bojonegoro,S,0353
+35.23,kab,Tuban,35,Jawa Timur,Java,Tuban,S,0356
+35.24,kab,Lamongan,35,Jawa Timur,Java,Lamongan,S,0322
+35.25,kab,Gresik,35,Jawa Timur,Java,Gresik,W,031
+35.26,kab,Bangkalan,35,Jawa Timur,Java,Bangkalan,M,031
+35.27,kab,Sampang,35,Jawa Timur,Java,Sampang,M,0323
+35.28,kab,Pamekasan,35,Jawa Timur,Java,Pamekasan,M,0324
+35.29,kab,Sumenep,35,Jawa Timur,Java,Sumenep,M,0328
+35.71,kota,Kediri,35,Jawa Timur,Java,Kediri,AG,0354
+35.72,kota,Blitar,35,Jawa Timur,Java,Blitar,AG,0342
+35.73,kota,Malang,35,Jawa Timur,Java,Malang,N,0341
+35.74,kota,Probolinggo,35,Jawa Timur,Java,Probolinggo,N,0335
+35.75,kota,Pasuruan,35,Jawa Timur,Java,Pasuruan,N,0343
+35.76,kota,Mojokerto,35,Jawa Timur,Java,Mojokerto,S,0321
+35.77,kota,Madiun,35,Jawa Timur,Java,Madiun,AE,0351
+35.78,kota,Surabaya,35,Jawa Timur,Java,Surabaya,L,031
+35.79,kota,Batu,35,Jawa Timur,Java,Batu,N,0341
+36.01,kab,Pandeglang,36,Banten,Java,Pandeglang,A,0253
+36.02,kab,Lebak,36,Banten,Java,Rangkasbitung,A,0252
+36.03,kab,Tangerang,36,Banten,Java,Tigaraksa,B,021
+36.04,kab,Serang,36,Banten,Java,Ciruas,A,0254
+36.71,kota,Tangerang,36,Banten,Java,Tangerang,B,021
+36.72,kota,Cilegon,36,Banten,Java,Cilegon,A,0254
+36.73,kota,Serang,36,Banten,Java,Serang,A,0254
+36.74,kota,Tangerang Selatan,36,Banten,Java,Tangerang Selatan,B,021
+51.01,kab,Jembrana,51,Bali,Bali & Nusa Tenggara,Negara,DK,0365
+51.02,kab,Tabanan,51,Bali,Bali & Nusa Tenggara,Tabanan,DK,0361;0368
+51.03,kab,Badung,51,Bali,Bali & Nusa Tenggara,Mangupura,DK,0361
+51.04,kab,Gianyar,51,Bali,Bali & Nusa Tenggara,Gianyar,DK,0361
+51.05,kab,Klungkung,51,Bali,Bali & Nusa Tenggara,Semarapura,DK,0366
+51.06,kab,Bangli,51,Bali,Bali & Nusa Tenggara,Bangli,DK,0366
+51.07,kab,Karangasem,51,Bali,Bali & Nusa Tenggara,Amlapura,DK,0363
+51.08,kab,Buleleng,51,Bali,Bali & Nusa Tenggara,Singaraja,DK,0362
+51.71,kota,Denpasar,51,Bali,Bali & Nusa Tenggara,Denpasar,DK,0361
+52.01,kab,Lombok Barat,52,Nusa Tenggara Barat,Bali & Nusa Tenggara,Gerung,DR,0370
+52.02,kab,Lombok Tengah,52,Nusa Tenggara Barat,Bali & Nusa Tenggara,Praya,DR,0370
+52.03,kab,Lombok Timur,52,Nusa Tenggara Barat,Bali & Nusa Tenggara,Selong,DR,0376
+52.04,kab,Sumbawa,52,Nusa Tenggara Barat,Bali & Nusa Tenggara,Sumbawa Besar,EA,0371
+52.05,kab,Dompu,52,Nusa Tenggara Barat,Bali & Nusa Tenggara,Dompu,EA,0373
+52.06,kab,Bima,52,Nusa Tenggara Barat,Bali & Nusa Tenggara,Woha,EA,0374
+52.07,kab,Sumbawa Barat,52,Nusa Tenggara Barat,Bali & Nusa Tenggara,Taliwang,EA,0372
+52.08,kab,Lombok Utara,52,Nusa Tenggara Barat,Bali & Nusa Tenggara,Tanjung,DR,0370
+52.71,kota,Mataram,52,Nusa Tenggara Barat,Bali & Nusa Tenggara,Mataram,DR,0370
+52.72,kota,Bima,52,Nusa Tenggara Barat,Bali & Nusa Tenggara,Bima,EA,0374
+53.01,kab,Kupang,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Oelamasi,DH,0380
+53.02,kab,Timor Tengah Selatan,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Soe,DH,0388
+53.03,kab,Timor Tengah Utara,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Kefamenanu,DH,0388
+53.04,kab,Belu,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Atambua,DH,0389
+53.05,kab,Alor,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Kalabahi,EB,0386
+53.06,kab,Flores Timur,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Larantuka,EB,0383
+53.07,kab,Sikka,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Maumere,EB,0382
+53.08,kab,Ende,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Ende,EB,0381
+53.09,kab,Ngada,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Bajawa,EB,0384
+53.10,kab,Manggarai,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Ruteng,EB,0385
+53.11,kab,Sumba Timur,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Waingapu,ED,0387
+53.12,kab,Sumba Barat,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Waikabubak,ED,0387
+53.13,kab,Lembata,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Lewoleba,EB,0383
+53.14,kab,Rote Ndao,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Baa,DH,0380
+53.15,kab,Manggarai Barat,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Labuan Bajo,EB,0385
+53.16,kab,Nagekeo,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Mbay,EB,0384
+53.17,kab,Sumba Tengah,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Waibakul,ED,0387
+53.18,kab,Sumba Barat Daya,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Tambolaka,ED,0387
+53.19,kab,Manggarai Timur,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Borong,EB,0385
+53.20,kab,Sabu Raijua,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Seba,DH,0380
+53.21,kab,Malaka,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Betun,DH,0389
+53.71,kota,Kupang,53,Nusa Tenggara Timur,Bali & Nusa Tenggara,Kupang,DH,0380
+61.01,kab,Sambas,61,Kalimantan Barat,Kalimantan,Sambas,KB,0562
+61.02,kab,Mempawah,61,Kalimantan Barat,Kalimantan,Mempawah,KB,0561
+61.03,kab,Sanggau,61,Kalimantan Barat,Kalimantan,Sanggau,KB,0564
+61.04,kab,Ketapang,61,Kalimantan Barat,Kalimantan,Ketapang,KB,0534
+61.05,kab,Sintang,61,Kalimantan Barat,Kalimantan,Sintang,KB,0565
+61.06,kab,Kapuas Hulu,61,Kalimantan Barat,Kalimantan,Putussibau,KB,0567
+61.07,kab,Bengkayang,61,Kalimantan Barat,Kalimantan,Bengkayang,KB,0562
+61.08,kab,Landak,61,Kalimantan Barat,Kalimantan,Ngabang,KB,0563
+61.09,kab,Sekadau,61,Kalimantan Barat,Kalimantan,Sekadau,KB,0564
+61.10,kab,Melawi,61,Kalimantan Barat,Kalimantan,Nanga Pinoh,KB,0568
+61.11,kab,Kayong Utara,61,Kalimantan Barat,Kalimantan,Sukadana,KB,0535
+61.12,kab,Kubu Raya,61,Kalimantan Barat,Kalimantan,Sungai Raya,KB,0561
+61.71,kota,Pontianak,61,Kalimantan Barat,Kalimantan,Pontianak,KB,0561
+61.72,kota,Singkawang,61,Kalimantan Barat,Kalimantan,Singkawang,KB,0562
+62.01,kab,Kotawaringin Barat,62,Kalimantan Tengah,Kalimantan,Pangkalan Bun,KH,0532
+62.02,kab,Kotawaringin Timur,62,Kalimantan Tengah,Kalimantan,Sampit,KH,0531;0539
+62.03,kab,Kapuas,62,Kalimantan Tengah,Kalimantan,Kuala Kapuas,KH,0513
+62.04,kab,Barito Selatan,62,Kalimantan Tengah,Kalimantan,Buntok,KH,0525
+62.05,kab,Barito Utara,62,Kalimantan Tengah,Kalimantan,Muara Teweh,KH,0519
+62.06,kab,Katingan,62,Kalimantan Tengah,Kalimantan,Kasongan,KH,0536
+62.07,kab,Seruyan,62,Kalimantan Tengah,Kalimantan,Kuala Pembuang,KH,0538
+62.08,kab,Sukamara,62,Kalimantan Tengah,Kalimantan,Sukamara,KH,0532
+62.09,kab,Lamandau,62,Kalimantan Tengah,Kalimantan,Nanga Bulik,KH,0532
+62.10,kab,Gunung Mas,62,Kalimantan Tengah,Kalimantan,Kuala Kurun,KH,0537
+62.11,kab,Pulang Pisau,62,Kalimantan Tengah,Kalimantan,Pulang Pisau,KH,0513
+62.12,kab,Murung Raya,62,Kalimantan Tengah,Kalimantan,Puruk Cahu,KH,0528
+62.13,kab,Barito Timur,62,Kalimantan Tengah,Kalimantan,Tamiang Layang,KH,0522;0526
+62.71,kota,Palangka Raya,62,Kalimantan Tengah,Kalimantan,Palangka Raya,KH,0536
+63.01,kab,Tanah Laut,63,Kalimantan Selatan,Kalimantan,Pelaihari,DA,0512
+63.02,kab,Kotabaru,63,Kalimantan Selatan,Kalimantan,Kotabaru,DA,0518
+63.03,kab,Banjar,63,Kalimantan Selatan,Kalimantan,Martapura,DA,0511
+63.04,kab,Barito Kuala,63,Kalimantan Selatan,Kalimantan,Marabahan,DA,0511
+63.05,kab,Tapin,63,Kalimantan Selatan,Kalimantan,Rantau,DA,0517
+63.06,kab,Hulu Sungai Selatan,63,Kalimantan Selatan,Kalimantan,Kandangan,DA,0517
+63.07,kab,Hulu Sungai Tengah,63,Kalimantan Selatan,Kalimantan,Barabai,DA,0517
+63.08,kab,Hulu Sungai Utara,63,Kalimantan Selatan,Kalimantan,Amuntai,DA,0527
+63.09,kab,Tabalong,63,Kalimantan Selatan,Kalimantan,Tanjung,DA,0526
+63.10,kab,Tanah Bumbu,63,Kalimantan Selatan,Kalimantan,Batulicin,DA,0518
+63.11,kab,Balangan,63,Kalimantan Selatan,Kalimantan,Paringin,DA,0526
+63.71,kota,Banjarmasin,63,Kalimantan Selatan,Kalimantan,Banjarmasin,DA,0511
+63.72,kota,Banjarbaru,63,Kalimantan Selatan,Kalimantan,Banjarbaru,DA,0511
+64.01,kab,Paser,64,Kalimantan Timur,Kalimantan,Tana Paser,KT,0543
+64.02,kab,Kutai Kartanegara,64,Kalimantan Timur,Kalimantan,Tenggarong,KT,0541
+64.03,kab,Berau,64,Kalimantan Timur,Kalimantan,Tanjung Redeb,KT,0554
+64.07,kab,Kutai Barat,64,Kalimantan Timur,Kalimantan,Sendawar,KT,0545
+64.08,kab,Kutai Timur,64,Kalimantan Timur,Kalimantan,Sangatta,KT,0548;0549
+64.09,kab,Penajam Paser Utara,64,Kalimantan Timur,Kalimantan,Penajam,KT,0542;0543
+64.11,kab,Mahakam Ulu,64,Kalimantan Timur,Kalimantan,Ujoh Bilang,KT,0545
+64.71,kota,Balikpapan,64,Kalimantan Timur,Kalimantan,Balikpapan,KT,0542
+64.72,kota,Samarinda,64,Kalimantan Timur,Kalimantan,Samarinda,KT,0541
+64.74,kota,Bontang,64,Kalimantan Timur,Kalimantan,Bontang,KT,0548
+65.01,kab,Bulungan,65,Kalimantan Utara,Kalimantan,Tanjung Selor,KU,0551;0552
+65.02,kab,Malinau,65,Kalimantan Utara,Kalimantan,Malinau,KU,0553
+65.03,kab,Nunukan,65,Kalimantan Utara,Kalimantan,Nunukan,KU,0556
+65.04,kab,Tana Tidung,65,Kalimantan Utara,Kalimantan,Tideng Pale,KU,0552
+65.71,kota,Tarakan,65,Kalimantan Utara,Kalimantan,Tarakan,KU,0551
+71.01,kab,Bolaang Mongondow,71,Sulawesi Utara,Sulawesi,Lolak,DB,0434
+71.02,kab,Minahasa,71,Sulawesi Utara,Sulawesi,Tondano,DB,0431
+71.03,kab,Kepulauan Sangihe,71,Sulawesi Utara,Sulawesi,Tahuna,DL,0432
+71.04,kab,Kepulauan Talaud,71,Sulawesi Utara,Sulawesi,Melonguane,DL,0432
+71.05,kab,Minahasa Selatan,71,Sulawesi Utara,Sulawesi,Amurang,DB,0430
+71.06,kab,Minahasa Utara,71,Sulawesi Utara,Sulawesi,Airmadidi,DB,0431
+71.07,kab,Minahasa Tenggara,71,Sulawesi Utara,Sulawesi,Ratahan,DB,0431
+71.08,kab,Bolaang Mongondow Utara,71,Sulawesi Utara,Sulawesi,Boroko,DB,0434
+71.09,kab,Kepulauan Siau Tagulandang Biaro,71,Sulawesi Utara,Sulawesi,Ondong Siau,DL,0432
+71.10,kab,Bolaang Mongondow Timur,71,Sulawesi Utara,Sulawesi,Tutuyan,DB,0434
+71.11,kab,Bolaang Mongondow Selatan,71,Sulawesi Utara,Sulawesi,Molibagu,DB,0434
+71.71,kota,Manado,71,Sulawesi Utara,Sulawesi,Manado,DB,0431
+71.72,kota,Bitung,71,Sulawesi Utara,Sulawesi,Bitung,DB,0438
+71.73,kota,Tomohon,71,Sulawesi Utara,Sulawesi,Tomohon,DB,0431
+71.74,kota,Kotamobagu,71,Sulawesi Utara,Sulawesi,Kotamobagu,DB,0434
+72.01,kab,Banggai,72,Sulawesi Tengah,Sulawesi,Luwuk,DN,0461;0462
+72.02,kab,Poso,72,Sulawesi Tengah,Sulawesi,Poso,DN,0452
+72.03,kab,Donggala,72,Sulawesi Tengah,Sulawesi,Banawa,DN,0457
+72.04,kab,Tolitoli,72,Sulawesi Tengah,Sulawesi,Tolitoli,DN,0453
+72.05,kab,Buol,72,Sulawesi Tengah,Sulawesi,Buol,DN,0445
+72.06,kab,Morowali,72,Sulawesi Tengah,Sulawesi,Bungku,DN,0409
+72.07,kab,Banggai Kepulauan,72,Sulawesi Tengah,Sulawesi,Salakan,DN,0462
+72.08,kab,Parigi Moutong,72,Sulawesi Tengah,Sulawesi,Parigi,DN,0450
+72.09,kab,Tojo Una-Una,72,Sulawesi Tengah,Sulawesi,Ampana,DN,0464
+72.10,kab,Sigi,72,Sulawesi Tengah,Sulawesi,Sigi Biromaru,DN,0451
+72.11,kab,Banggai Laut,72,Sulawesi Tengah,Sulawesi,Banggai,DN,
+72.12,kab,Morowali Utara,72,Sulawesi Tengah,Sulawesi,Kolonodale,DN,0465
+72.71,kota,Palu,72,Sulawesi Tengah,Sulawesi,Palu,DN,0451
+73.01,kab,Kepulauan Selayar,73,Sulawesi Selatan,Sulawesi,Benteng,DD,0414
+73.02,kab,Bulukumba,73,Sulawesi Selatan,Sulawesi,Bulukumba,DD,0413
+73.03,kab,Bantaeng,73,Sulawesi Selatan,Sulawesi,Bantaeng,DD,0413
+73.04,kab,Jeneponto,73,Sulawesi Selatan,Sulawesi,Bontosunggu,DD,0419
+73.05,kab,Takalar,73,Sulawesi Selatan,Sulawesi,Pattallassang,DD,0418
+73.06,kab,Gowa,73,Sulawesi Selatan,Sulawesi,Sungguminasa,DD,0411;0417
+73.07,kab,Sinjai,73,Sulawesi Selatan,Sulawesi,Balangnipa,DW,0482
+73.08,kab,Bone,73,Sulawesi Selatan,Sulawesi,Watampone,DW,0481
+73.09,kab,Maros,73,Sulawesi Selatan,Sulawesi,Turikale,DD,0411
+73.10,kab,Pangkajene dan Kepulauan,73,Sulawesi Selatan,Sulawesi,Pangkajene,DD,0410
+73.11,kab,Barru,73,Sulawesi Selatan,Sulawesi,Barru,DP,0427
+73.12,kab,Soppeng,73,Sulawesi Selatan,Sulawesi,Watansoppeng,DW,0484
+73.13,kab,Wajo,73,Sulawesi Selatan,Sulawesi,Sengkang,DW,0472;0485
+73.14,kab,Sidenreng Rappang,73,Sulawesi Selatan,Sulawesi,Pangkajene Sidenreng,DP,0421
+73.15,kab,Pinrang,73,Sulawesi Selatan,Sulawesi,Pinrang,DP,0421
+73.16,kab,Enrekang,73,Sulawesi Selatan,Sulawesi,Enrekang,DP,0420
+73.17,kab,Luwu,73,Sulawesi Selatan,Sulawesi,Belopa,DP,0471
+73.18,kab,Tana Toraja,73,Sulawesi Selatan,Sulawesi,Makale,DP,0423
+73.22,kab,Luwu Utara,73,Sulawesi Selatan,Sulawesi,Masamba,DP,0473
+73.24,kab,Luwu Timur,73,Sulawesi Selatan,Sulawesi,Malili,DP,0474;0475
+73.26,kab,Toraja Utara,73,Sulawesi Selatan,Sulawesi,Rantepao,DP,0423
+73.71,kota,Makassar,73,Sulawesi Selatan,Sulawesi,Makassar,DD,0411
+73.72,kota,Parepare,73,Sulawesi Selatan,Sulawesi,Parepare,DP,0421
+73.73,kota,Palopo,73,Sulawesi Selatan,Sulawesi,Palopo,DP,0471
+74.01,kab,Kolaka,74,Sulawesi Tenggara,Sulawesi,Kolaka,DT,0405
+74.02,kab,Konawe,74,Sulawesi Tenggara,Sulawesi,Unaaha,DT,0408
+74.03,kab,Muna,74,Sulawesi Tenggara,Sulawesi,Raha,DT,0403
+74.04,kab,Buton,74,Sulawesi Tenggara,Sulawesi,Pasarwajo,DT,0402
+74.05,kab,Konawe Selatan,74,Sulawesi Tenggara,Sulawesi,Andolo,DT,0408
+74.06,kab,Bombana,74,Sulawesi Tenggara,Sulawesi,Rumbia,DT,
+74.07,kab,Wakatobi,74,Sulawesi Tenggara,Sulawesi,Wangi-Wangi,DT,0404
+74.08,kab,Kolaka Utara,74,Sulawesi Tenggara,Sulawesi,Lasusua,DT,0405
+74.09,kab,Konawe Utara,74,Sulawesi Tenggara,Sulawesi,Wanggudu,DT,0408
+74.10,kab,Buton Utara,74,Sulawesi Tenggara,Sulawesi,Buranga,DT,0402
+74.11,kab,Kolaka Timur,74,Sulawesi Tenggara,Sulawesi,Tirawuta,DT,0405
+74.12,kab,Konawe Kepulauan,74,Sulawesi Tenggara,Sulawesi,Langara,DT,
+74.13,kab,Muna Barat,74,Sulawesi Tenggara,Sulawesi,Sawerigadi,DT,
+74.14,kab,Buton Tengah,74,Sulawesi Tenggara,Sulawesi,Labungkari,DT,0402
+74.15,kab,Buton Selatan,74,Sulawesi Tenggara,Sulawesi,Batauga,DT,0402
+74.71,kota,Kendari,74,Sulawesi Tenggara,Sulawesi,Kendari,DT,0401
+74.72,kota,Baubau,74,Sulawesi Tenggara,Sulawesi,Baubau,DT,0402
+75.01,kab,Gorontalo,75,Gorontalo,Sulawesi,Limboto,DM,0435
+75.02,kab,Boalemo,75,Gorontalo,Sulawesi,Tilamuta,DM,
+75.03,kab,Bone Bolango,75,Gorontalo,Sulawesi,Suwawa,DM,
+75.04,kab,Pohuwato,75,Gorontalo,Sulawesi,Marisa,DM,0443
+75.05,kab,Gorontalo Utara,75,Gorontalo,Sulawesi,Kwandang,DM,0442
+75.71,kota,Gorontalo,75,Gorontalo,Sulawesi,Gorontalo,DM,0435
+76.01,kab,Pasangkayu,76,Sulawesi Barat,Sulawesi,Pasangkayu,DC,0424
+76.02,kab,Mamuju,76,Sulawesi Barat,Sulawesi,Mamuju,DC,0426
+76.03,kab,Mamasa,76,Sulawesi Barat,Sulawesi,Mamasa,DC,0428
+76.04,kab,Polewali Mandar,76,Sulawesi Barat,Sulawesi,Polewali,DC,0428
+76.05,kab,Majene,76,Sulawesi Barat,Sulawesi,Banggae,DC,0422
+76.06,kab,Mamuju Tengah,76,Sulawesi Barat,Sulawesi,Tobadak,DC,0426;0429
+81.01,kab,Maluku Tengah,81,Maluku,Maluku,Masohi,DE,0914
+81.02,kab,Maluku Tenggara,81,Maluku,Maluku,Langgur,DE,
+81.03,kab,Kepulauan Tanimbar,81,Maluku,Maluku,Saumlaki,DE,0918
+81.04,kab,Buru,81,Maluku,Maluku,Namlea,DE,0913
+81.05,kab,Seram Bagian Timur,81,Maluku,Maluku,Bula,DE,0915
+81.06,kab,Seram Bagian Barat,81,Maluku,Maluku,Piru,DE,
+81.07,kab,Kepulauan Aru,81,Maluku,Maluku,Dobo,DE,0917
+81.08,kab,Maluku Barat Daya,81,Maluku,Maluku,Tiakur,DE,
+81.09,kab,Buru Selatan,81,Maluku,Maluku,Namrole,DE,
+81.71,kota,Ambon,81,Maluku,Maluku,Ambon,DE,0911
+81.72,kota,Tual,81,Maluku,Maluku,Tual,DE,0916
+82.01,kab,Halmahera Barat,82,Maluku Utara,Maluku,Jailolo,DG,0922
+82.02,kab,Halmahera Tengah,82,Maluku Utara,Maluku,Weda,DG,
+82.03,kab,Halmahera Utara,82,Maluku Utara,Maluku,Tobelo,DG,0924
+82.04,kab,Halmahera Selatan,82,Maluku Utara,Maluku,Labuha,DG,0927
+82.05,kab,Kepulauan Sula,82,Maluku Utara,Maluku,Sanana,DG,0929
+82.06,kab,Halmahera Timur,82,Maluku Utara,Maluku,Maba,DG,
+82.07,kab,Pulau Morotai,82,Maluku Utara,Maluku,Daruba,DG,0923
+82.08,kab,Pulau Taliabu,82,Maluku Utara,Maluku,Bobong,DG,0929
+82.71,kota,Ternate,82,Maluku Utara,Maluku,Ternate,DG,0921
+82.72,kota,Tidore Kepulauan,82,Maluku Utara,Maluku,Tidore Kepulauan,DG,0921
+91.03,kab,Jayapura,91,Papua,Papua,Sentani,PA,
+91.05,kab,Kepulauan Yapen,91,Papua,Papua,Serui,PA,0983
+91.06,kab,Biak Numfor,91,Papua,Papua,Biak,PA,0981
+91.10,kab,Sarmi,91,Papua,Papua,Sarmi,PA,0966
+91.11,kab,Keerom,91,Papua,Papua,Waris,PA,
+91.15,kab,Waropen,91,Papua,Papua,Botawa,PA,
+91.19,kab,Supiori,91,Papua,Papua,Sorendiweri,PA,
+91.20,kab,Mamberamo Raya,91,Papua,Papua,Burmeso,PA,
+91.71,kota,Jayapura,91,Papua,Papua,Jayapura,PA,0967
+92.02,kab,Manokwari,92,Papua Barat,Papua,Manokwari,PB,0986
+92.03,kab,Fakfak,92,Papua Barat,Papua,Fakfak,PB,0956
+92.06,kab,Teluk Bintuni,92,Papua Barat,Papua,Bintuni,PB,0955
+92.07,kab,Teluk Wondama,92,Papua Barat,Papua,Rasiei,PB,
+92.08,kab,Kaimana,92,Papua Barat,Papua,Kaimana,PB,0957
+92.11,kab,Manokwari Selatan,92,Papua Barat,Papua,Ransiki,PB,0980
+92.12,kab,Pegunungan Arfak,92,Papua Barat,Papua,Anggi,PB,
+93.01,kab,Merauke,93,Papua Selatan,Papua,Merauke,PS,0971
+93.02,kab,Boven Digoel,93,Papua Selatan,Papua,Tanah Merah,PS,0975
+93.03,kab,Mappi,93,Papua Selatan,Papua,Kepi,PS,
+93.04,kab,Asmat,93,Papua Selatan,Papua,Agats,PS,0902
+94.01,kab,Nabire,94,Papua Tengah,Papua,Nabire,PT,0985
+94.02,kab,Puncak Jaya,94,Papua Tengah,Papua,Mulia,PT,
+94.03,kab,Paniai,94,Papua Tengah,Papua,Enarotali,PT,
+94.04,kab,Mimika,94,Papua Tengah,Papua,Timika,PT,0901
+94.05,kab,Puncak,94,Papua Tengah,Papua,Ilaga,PT,
+94.06,kab,Dogiyai,94,Papua Tengah,Papua,Kigamani,PT,0984
+94.07,kab,Intan Jaya,94,Papua Tengah,Papua,Sugapa,PT,
+94.08,kab,Deiyai,94,Papua Tengah,Papua,Tigi,PT,
+95.01,kab,Jayawijaya,95,Papua Pegunungan,Papua,Wamena,PG,0969
+95.02,kab,Pegunungan Bintang,95,Papua Pegunungan,Papua,Oksibil,PG,
+95.03,kab,Yahukimo,95,Papua Pegunungan,Papua,Sumohai,PG,
+95.04,kab,Tolikara,95,Papua Pegunungan,Papua,Karubaga,PG,
+95.05,kab,Mamberamo Tengah,95,Papua Pegunungan,Papua,Kobakma,PG,
+95.06,kab,Yalimo,95,Papua Pegunungan,Papua,Elelim,PG,
+95.07,kab,Lanny Jaya,95,Papua Pegunungan,Papua,Tiom,PG,
+95.08,kab,Nduga,95,Papua Pegunungan,Papua,Kenyam,PG,
+96.01,kab,Sorong,96,Papua Barat Daya,Papua,Aimas,PY,0951
+96.02,kab,Sorong Selatan,96,Papua Barat Daya,Papua,Teminabuan,PY,0952
+96.03,kab,Raja Ampat,96,Papua Barat Daya,Papua,Waisai,PY,
+96.04,kab,Tambrauw,96,Papua Barat Daya,Papua,Fef,PY,
+96.05,kab,Maybrat,96,Papua Barat Daya,Papua,Kumurkek,PY,
+96.71,kota,Sorong,96,Papua Barat Daya,Papua,Sorong,PY,0951
