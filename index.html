@@ -107,12 +107,13 @@ footer a{color:inherit}
   #banner .q{font-size:17px}
   header h1{font-size:15px}
 }
-.tgm-nav{display:inline-flex;gap:4px;align-items:center;margin-right:6px;flex:none}.tgm-nav a{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:7px;border:1px solid currentColor;opacity:.5;color:inherit;text-decoration:none;font-size:14px;line-height:1}.tgm-nav a:hover,.tgm-nav a:focus-visible{opacity:1}
+.tgm-nav{display:inline-flex;gap:4px;align-items:center;margin-right:6px;flex:none}.tgm-nav>a{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:7px;border:1px solid currentColor;opacity:.5;color:inherit;text-decoration:none;font-size:14px;line-height:1}.tgm-nav>a:hover,.tgm-nav>a:focus-visible{opacity:1}
+.tgm-maps{position:relative;display:inline-block}.tgm-maps>summary{list-style:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:7px;border:1px solid currentColor;opacity:.5;cursor:pointer;font-size:14px;line-height:1}.tgm-maps>summary::-webkit-details-marker{display:none}.tgm-maps[open]>summary,.tgm-maps>summary:hover{opacity:1}.tgm-pop{position:absolute;top:34px;left:0;z-index:9999;width:min(360px,calc(100vw - 24px));background:#1b2229;color:#e8edf2;border:1px solid #3a4652;border-radius:10px;padding:10px 12px;box-shadow:0 8px 24px #0006;font:13px/1.35 system-ui,sans-serif;text-align:left}.tgm-pop b{display:block;font-size:13px;margin-bottom:6px}.tgm-pop a{display:inline;width:auto;height:auto;border:0;opacity:1;color:#e8edf2;text-decoration:none}.tgm-pop a:hover{color:#f2c94c}.tgm-pop li{display:flex;gap:8px;align-items:baseline;margin:4px 0}.tgm-pop ul{list-style:none;margin:0;padding:0}.tgm-pop .lv{flex:none;width:16px;text-align:center;font-size:11px;border:1px solid #4b5866;border-radius:3px;color:#9fb0bf}.tgm-pop .ml{margin-left:auto;flex:none;color:#9fb0bf;font-size:12px}
 </style>
 </head>
 <body>
 <header>
-<span class="tgm-nav"><a href="https://tgm-hub.github.io/Atlas/" title="Atlas">⌂</a><a href="https://tgm-hub.github.io/Atlas/daily.html" target="gg-daily" title="Révision du jour">⏱</a></span>
+<span class="tgm-nav"><a href="https://tgm-hub.github.io/Atlas/" title="Atlas">⌂</a><a href="https://tgm-hub.github.io/Atlas/daily.html" target="gg-daily" title="Révision du jour">⏱</a><details class="tgm-maps"><summary title="Maps LearnableMeta à jouer sur GeoGuessr">🎯</summary><div class="tgm-pop"><b>Maps LearnableMeta (GeoGuessr)</b><ul><li><span class="lv" title="avancé">A</span><a href="https://www.geoguessr.com/maps/674e3a3ec04532f1eaa44d77" target="_blank" rel="noopener">ALM - Indonesia (All) Kabupaten ↗</a><a class="ml" href="https://learnablemeta.com/maps/674e3a3ec04532f1eaa44d77" target="_blank" rel="noopener">metas</a></li><li><span class="lv" title="avancé">A</span><a href="https://www.geoguessr.com/maps/674e385e870a32eb46e7d5aa" target="_blank" rel="noopener">ALM - Indonesia (Java) Kabupaten ↗</a><a class="ml" href="https://learnablemeta.com/maps/674e385e870a32eb46e7d5aa" target="_blank" rel="noopener">metas</a></li><li><span class="lv" title="avancé">A</span><a href="https://www.geoguessr.com/maps/673cdb583c4833f95fc2ae16" target="_blank" rel="noopener">ALM - Indonesia (Sumatra) Kabupaten ↗</a><a class="ml" href="https://learnablemeta.com/maps/673cdb583c4833f95fc2ae16" target="_blank" rel="noopener">metas</a></li><li><span class="lv" title="avancé">A</span><a href="https://www.geoguessr.com/maps/674e38d7e27d489012586c32" target="_blank" rel="noopener">ALM - Indonesia (Kalimantan) Kabupaten ↗</a><a class="ml" href="https://learnablemeta.com/maps/674e38d7e27d489012586c32" target="_blank" rel="noopener">metas</a></li><li><span class="lv" title="avancé">A</span><a href="https://www.geoguessr.com/maps/674e3914870a32eb46e7dbf6" target="_blank" rel="noopener">ALM - Indonesia (Sulawesi) Kabupaten ↗</a><a class="ml" href="https://learnablemeta.com/maps/674e3914870a32eb46e7dbf6" target="_blank" rel="noopener">metas</a></li><li><span class="lv" title="avancé">A</span><a href="https://www.geoguessr.com/maps/674e39a19575e9a5724d640b" target="_blank" rel="noopener">ALM - Indonesia (Lesser Sunda + Maluku) Kabupaten ↗</a><a class="ml" href="https://learnablemeta.com/maps/674e39a19575e9a5724d640b" target="_blank" rel="noopener">metas</a></li></ul></div></details></span>
   <h1>Kabupaten d'Indonésie</h1>
   <div id="sbox"><input id="sq" type="search" placeholder="Chercher : nom, chef-lieu, plaque, indicatif, code  ( / )" autocomplete="off" spellcheck="false"><div id="shits"></div></div>
   <span class="sp"></span>
@@ -462,7 +463,8 @@ function textScore(q,t){
     if(lev(q,t.slice(0,q.length),max)<=max) return 45; }
   return 0; }
 const IDX=[];
-U.forEach(u=>IDX.push({kind:"u",u,name:fold(u.n),full:fold((u.t==="kota"?"kota ":"kabupaten kab ")+u.n),cap:fold(u.cap),code:u.c}));
+const ini=t=>t.split(" ").filter(Boolean).map(w=>w[0]).join("");
+U.forEach(u=>{const name=fold(u.n);IDX.push({kind:"u",u,name,full:fold((u.t==="kota"?"kota ":"kabupaten kab ")+u.n),cap:fold(u.cap),code:u.c,ini:ini(name)});});
 Object.entries(PLATES).forEach(([k,m])=>IDX.push({kind:"pl",code:k,members:m}));
 Object.entries(PHONES).forEach(([k,m])=>IDX.push({kind:"ph",code:k,members:m}));
 Object.entries(P).forEach(([c,p])=>IDX.push({kind:"pv",c,p,name:fold(p.n)}));
@@ -476,6 +478,10 @@ function search(raw){
       if(qc.length>=2&&/^\d/.test(qc)){ const cd=e.code.replace(".","");
         if(cd===qc||e.code===raw.trim()) {s=100;why="code "+e.code;} else if(qc.length>=3&&cd.startsWith(qc)) {s=Math.max(s,60);why="code "+e.code;} }
       if(ALIAS[qc]===e.code) {s=95;why="alias « "+qc+" »";}
+      // initials: "bb" / "kbb" Kab. Bandung Barat, "kjs" Kota Jakarta Selatan
+      if(/^[a-z]{2,6}$/.test(qc)&&e.ini.length>=2){ const pre=e.u.t==="kota"?"k":"k";
+        if(qc===e.ini||qc===pre+e.ini) {if(s<88){s=88;why="initiales";}}
+        else if(qc.length>=3&&(e.ini.startsWith(qc)||(pre+e.ini).startsWith(qc))) {if(s<50){s=50;why="initiales";}} }
       if(s && e.u.t==="kota" && q.startsWith("kota")) s+=2;
     } else if(e.kind==="pl"){
       const k=e.code.toLowerCase();
