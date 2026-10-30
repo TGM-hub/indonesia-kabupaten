@@ -107,10 +107,12 @@ footer a{color:inherit}
   #banner .q{font-size:17px}
   header h1{font-size:15px}
 }
+.tgm-nav{display:inline-flex;gap:4px;align-items:center;margin-right:6px;flex:none}.tgm-nav a{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:7px;border:1px solid currentColor;opacity:.5;color:inherit;text-decoration:none;font-size:14px;line-height:1}.tgm-nav a:hover,.tgm-nav a:focus-visible{opacity:1}
 </style>
 </head>
 <body>
 <header>
+<span class="tgm-nav"><a href="https://tgm-hub.github.io/Atlas/" title="Atlas">⌂</a><a href="https://tgm-hub.github.io/Atlas/daily.html" target="gg-daily" title="Révision du jour">⏱</a></span>
   <h1>Kabupaten d'Indonésie</h1>
   <div id="sbox"><input id="sq" type="search" placeholder="Chercher : nom, chef-lieu, plaque, indicatif, code  ( / )" autocomplete="off" spellcheck="false"><div id="shits"></div></div>
   <span class="sp"></span>
@@ -325,10 +327,16 @@ function ask(){
   renderScore();
 }
 function record(k,ok){const s=stats[k]||{n:0,ok:0,last:0};s.n++;if(ok)s.ok++;s.last=ok?1:0;stats[k]=s;save("stats",stats);}
+function nudge(t){
+  let n=document.getElementById("nudge");
+  if(!n){n=document.createElement("div");n.id="nudge";n.style.cssText="position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:50;padding:8px 14px;border-radius:8px;background:#222c;color:#fff;font-size:14px;pointer-events:none;transition:opacity .3s";document.body.appendChild(n);}
+  n.textContent=t;n.style.opacity="1";clearTimeout(nudge.t);nudge.t=setTimeout(()=>n.style.opacity="0",1600);
+}
 function clickAt(cx,cy){
   const u=unitAt(cx,cy);
   if(state.mode==="explore"){if(u&&active.has(u.i)){paintBase();els[u.i].classList.add("sel");showCard(u);}return;}
-  if(state.phase!=="ask"||!u||!active.has(u.i)&&state.mode!=="prov") return;
+  if(state.phase!=="ask") return;
+  if(!u||!active.has(u.i)&&state.mode!=="prov"){ nudge(u?"Hors de la zone de la série : clique une unité en couleur.":"Clique sur une terre, pas dans la mer."); return; }
   const it=cur();
   if(state.mode==="prov"&&state.step===1){
     const good=u.p===it.u.p;

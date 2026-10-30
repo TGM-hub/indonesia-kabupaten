@@ -11,8 +11,17 @@ Set-Location $PSScriptRoot
 $env:PYTHONIOENCODING = "utf-8"
 
 # 1. Build : on ne publie jamais une version cassée
-python build.py
-if ($LASTEXITCODE -ne 0) { throw "Build en erreur : corrige les fichiers signalés avant de publier." }
+# « python » peut être le raccourci du Microsoft Store : on garde le premier qui tourne vraiment
+$Py = $null
+foreach ($c in "py", "python", "python3") {
+    if (Get-Command $c -ErrorAction SilentlyContinue) { & $c -c "import sys" *> $null; if ($LASTEXITCODE -eq 0) { $Py = $c; break } }
+}
+if ($Py) {
+    & $Py build.py
+    if ($LASTEXITCODE -ne 0) { throw "Build en erreur : corrige les fichiers signalés avant de publier." }
+} else {
+    Write-Host "Python introuvable : publication de index.html tel quel (déjà construit)." -ForegroundColor Yellow
+}
 
 # 2. Dépôt local (premier lancement)
 if (-not (Test-Path ".git")) {
