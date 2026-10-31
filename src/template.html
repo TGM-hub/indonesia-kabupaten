@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,14 +12,14 @@
   --zone:#e3a42b; --zone-soft:#f6deaa; --accent:#1f6f8b; --accent-ink:#fff;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#14191b; --panel:#1c2326; --ink:#e7ecec; --muted:#9aa7aa; --line:#2f3a3e;
-  --sea:#0f2530; --land:#2a3134; --land-act:#3a4448; --stroke:#56636a; --prov:#c9c2b2;
+  --bg:#12283a; --panel:#0e2130; --ink:#e6eef2; --muted:#8ea6b4; --line:#3b5a6d;
+  --sea:#0b1f2e; --land:#264457; --land-act:#35596f; --stroke:#56748a; --prov:#c9c2b2;
   --hover:#6b5a2e; --ok:#4cc184; --ok-soft:#245c3e; --ko:#ef7462; --ko-soft:#6b2c24;
   --zone:#f0b748; --zone-soft:#6a5321; --accent:#58b4d1; --accent-ink:#0b1a20;
 }}
 :root[data-theme="dark"]{
-  --bg:#14191b; --panel:#1c2326; --ink:#e7ecec; --muted:#9aa7aa; --line:#2f3a3e;
-  --sea:#0f2530; --land:#2a3134; --land-act:#3a4448; --stroke:#56636a; --prov:#c9c2b2;
+  --bg:#12283a; --panel:#0e2130; --ink:#e6eef2; --muted:#8ea6b4; --line:#3b5a6d;
+  --sea:#0b1f2e; --land:#264457; --land-act:#35596f; --stroke:#56748a; --prov:#c9c2b2;
   --hover:#6b5a2e; --ok:#4cc184; --ok-soft:#245c3e; --ko:#ef7462; --ko-soft:#6b2c24;
   --zone:#f0b748; --zone-soft:#6a5321; --accent:#58b4d1; --accent-ink:#0b1a20;
 }
@@ -110,6 +110,10 @@ footer a{color:inherit}
 .tgm-nav{display:inline-flex;gap:4px;align-items:center;margin-right:6px;flex:none}.tgm-nav>a{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:7px;border:1px solid currentColor;opacity:.5;color:inherit;text-decoration:none;font-size:14px;line-height:1}.tgm-nav>a:hover,.tgm-nav>a:focus-visible{opacity:1}
 .tgm-maps{position:relative;display:inline-block}.tgm-maps>summary{list-style:none;display:inline-grid;place-items:center;width:28px;height:28px;border-radius:7px;border:1px solid currentColor;opacity:.5;cursor:pointer;font-size:14px;line-height:1}.tgm-maps>summary::-webkit-details-marker{display:none}.tgm-maps[open]>summary,.tgm-maps>summary:hover{opacity:1}.tgm-pop{position:absolute;top:34px;left:0;z-index:9999;width:min(360px,calc(100vw - 24px));background:#1b2229;color:#e8edf2;border:1px solid #3a4652;border-radius:10px;padding:10px 12px;box-shadow:0 8px 24px #0006;font:13px/1.35 system-ui,sans-serif;text-align:left}.tgm-pop b{display:block;font-size:13px;margin-bottom:6px}.tgm-pop a{display:inline;width:auto;height:auto;border:0;opacity:1;color:#e8edf2;text-decoration:none}.tgm-pop a:hover{color:#f2c94c}.tgm-pop li{display:flex;gap:8px;align-items:baseline;margin:4px 0}.tgm-pop ul{list-style:none;margin:0;padding:0}.tgm-pop .lv{flex:none;width:16px;text-align:center;font-size:11px;border:1px solid #4b5866;border-radius:3px;color:#9fb0bf}.tgm-pop .ml{margin-left:auto;flex:none;color:#9fb0bf;font-size:12px}
 </style>
+<!-- tgm-pwa : hors-ligne et installation, généré par Atlas/tools/pwa.py -->
+<link rel="apple-touch-icon" href="icons/icon-192.png"><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#12283a"><link rel="icon" href="icons/icon-192.png">
+<script>if ('serviceWorker' in navigator && location.protocol.startsWith('http')) addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));</script>
+<!-- /tgm-pwa -->
 </head>
 <body>
 <header>
@@ -591,7 +595,7 @@ $("#themeBtn").onclick=()=>{
   const r=document.documentElement, dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme: dark)").matches;
   r.dataset.theme=dark?"light":"dark"; save("theme",r.dataset.theme);
 };
-const th=load("theme",null); if(th) document.documentElement.dataset.theme=th;
+const th=load("theme",null); document.documentElement.dataset.theme=th||"dark";   // dark by default, like the Atlas
 let rz; new ResizeObserver(()=>{clearTimeout(rz);rz=setTimeout(()=>{if(state.phase!=="reveal")fitZone();},80);}).observe($("#mapwrap"));
 
 /* ---------- init ---------- */
