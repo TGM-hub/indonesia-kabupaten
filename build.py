@@ -12,8 +12,6 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 S = 1000            # 1 unit = 0.001 degree
 LON0, LAT0 = 94.9, 6.2
 ISLANDS = ["Sumatra", "Java", "Bali & Nusa Tenggara", "Kalimantan", "Sulawesi", "Maluku", "Papua"]
-ISLANDS_FR = {"Sumatra": "Sumatra", "Java": "Java", "Bali & Nusa Tenggara": "Bali et Nusa Tenggara",
-              "Kalimantan": "Kalimantan", "Sulawesi": "Sulawesi", "Maluku": "Moluques", "Papua": "Papouasie"}
 
 
 def proj(lon, lat):
@@ -76,7 +74,8 @@ def main():
         P[code] = dict(prov_meta[code], d=d, b=b)
     allb = [min(u["b"][0] for u in units), min(u["b"][1] for u in units),
             max(u["b"][2] for u in units), max(u["b"][3] for u in units)]
-    data = {"units": units, "provs": P, "islands": [[i, ISLANDS_FR[i]] for i in ISLANDS], "bbox": allb}
+    # islands: [key, label]; the UI is in English, so the label is the key
+    data = {"units": units, "provs": P, "islands": [[i, i] for i in ISLANDS], "bbox": allb}
     tpl = open(os.path.join(ROOT, "src", "template.html"), encoding="utf-8").read()
     html = tpl.replace("/*__DATA__*/null", json.dumps(data, ensure_ascii=False, separators=(",", ":")))
     out = os.path.join(ROOT, "index.html")
