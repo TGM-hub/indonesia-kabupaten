@@ -173,6 +173,7 @@ footer a{color:inherit}
   <div class="row" style="margin-top:12px;justify-content:flex-end"><button class="btn" id="resetStats">Effacer les stats</button></div>
 </dialog>
 
+<script src="tgm-core.js"></script>
 <script>
 const DATA=/*__DATA__*/null;
 (()=>{
@@ -327,7 +328,17 @@ function ask(){
   $("#card").innerHTML='<div class="muted">Clique sur la carte pour répondre.</div>';
   renderScore();
 }
-function record(k,ok){const s=stats[k]||{n:0,ok:0,last:0};s.n++;if(ok)s.ok++;s.last=ok?1:0;stats[k]=s;save("stats",stats);}
+function record(k,ok){const s=stats[k]||{n:0,ok:0,last:0};s.n++;if(ok)s.ok++;s.last=ok?1:0;stats[k]=s;save("stats",stats);pushStats();}
+/* shared summary for the Atlas daily review (tgm.stats.kabupaten, see tgm-core.js); idkab.v1.stats stays the reference.
+   items = every question key (unit, plate, phone code) asked at least once; weak = last answer wrong */
+function pushStats(){
+  if(!window.TGM) return;
+  const s={seen:0,correct:0,practiced:0,weak:0};
+  for(const v of Object.values(stats)){ if(!v||!v.n) continue; s.seen+=v.n; s.correct+=v.ok||0; s.practiced++; if(v.last===0) s.weak++; }
+  s.total=U.length;
+  s.byCountry={ID:{seen:s.seen,correct:s.correct,practiced:s.practiced,weak:s.weak}};
+  TGM.stats.write("kabupaten",s);
+}
 function nudge(t){
   let n=document.getElementById("nudge");
   if(!n){n=document.createElement("div");n.id="nudge";n.style.cssText="position:fixed;left:50%;bottom:28px;transform:translateX(-50%);z-index:50;padding:8px 14px;border-radius:8px;background:#222c;color:#fff;font-size:14px;pointer-events:none;transition:opacity .3s";document.body.appendChild(n);}
@@ -556,7 +567,7 @@ function statsHtml(){
 }
 $("#statsBtn").onclick=()=>{$("#statsBody").innerHTML=statsHtml();$("#statsdlg").showModal();};
 $("#closeStats").onclick=()=>$("#statsdlg").close();
-$("#resetStats").onclick=()=>{stats={};save("stats",stats);$("#statsBody").innerHTML=statsHtml();updateErrCount();};
+$("#resetStats").onclick=()=>{stats={};save("stats",stats);pushStats();$("#statsBody").innerHTML=statsHtml();updateErrCount();};
 
 /* ---------- controls ---------- */
 function setMode(m){
@@ -588,7 +599,17 @@ if(prefs.zone&&[...zoneSel.options].some(o=>o.value===prefs.zone)) zoneSel.value
 if(prefs.kota===false) $("#kota").checked=false;
 if(prefs.len) $("#len").value=prefs.len;
 fitBox(DATA.bbox);
-setMode(prefs.mode||"name");
+/* direct links: #name, #prov, #plate, #phone or #explore pick the mode; #<mode>/<island> also picks the zone
+   (island = sumatra, java, bali, kalimantan, sulawesi, maluku, papua) */
+function fromHash(){
+  const [m,z]=decodeURIComponent(location.hash.slice(1)).trim().toLowerCase().split("/");
+  if(!document.querySelector(`#modes button[data-m="${m}"]`)) return false;
+  if(z){const o=[...zoneSel.options].find(o=>o.value.startsWith("i:")&&o.value.slice(2).toLowerCase().startsWith(z));if(o) zoneSel.value=o.value;}
+  setMode(m); return true;
+}
+addEventListener("hashchange",fromHash);
+pushStats();
+if(!fromHash()) setMode(prefs.mode||"name");
 })();
 </script>
 </body>
